@@ -18,9 +18,8 @@ class PrincipalController extends TWin8 {
         #id colaborador
         $this->addDados('idUsuario', $this->SECURITY->getUsuario()->getId());
         
-        $this->addDados('CursoSugerido', $this->SECURITY->isAllowed('cursosugerido'));
-        $this->addDados('AreaDeConhecimento', $this->SECURITY->isAllowed('areadeconhecimento'));
         $this->addDados('usuario', $this->SECURITY->isAllowed('usuario'));
+        $this->addDados('integrante', $this->SECURITY->isAllowed('integrante'));
         $this->addDados('perfil', $this->SECURITY->isAllowed('perfil'));
         $this->addDados('funcionalidade', $this->SECURITY->isAllowed('funcionalidade'));
         
