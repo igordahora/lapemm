@@ -1,0 +1,72 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Perfil<small>cadastro</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <form name="fCadastro" id="fCadastro" action="index.php?Perfil/inserir" method="post">
+                
+                <h2>Nome</h2>
+                <div class="input-control text">
+                    <input type="text" name="nome" id="nome" maxlength="60" required=""/>
+                </div>
+                
+                <h2>Descrição</h2>
+                <div class="input-control textarea">
+                    <textarea id="descricao" name="descricao" required=""></textarea>
+                </div>
+                
+                <h2>Funcionalidades</h2>
+                <!-- FUNCIONALIDADES DO PERFIL -->
+                <div id="select_move">
+                    <div class="input-control select">
+                        <select name="lst_funcionalidade" id="lst_funcionalidade" multiple="" size="10">
+                            <?php echo $view_listFuncionalidade; ?>
+                        </select>
+                    </div>
+                    <div id="controles">
+                        <input type="button" value="Todos" id="move_todos" class="bg-color-orange">      
+                        <input type="button" value="Adicionar" id="move_sel" class="bg-color-orange">
+                        <input type="button" value="Remover" id="remove_sel" class="bg-color-orange">
+                        <input type="button" value="Limpar" id="remove_todos" class="bg-color-orange">
+                    </div>
+                    <div class="input-control select">
+                        <select name="funcionalidades[]" id="funcionalidades" multiple="multiple" size="10" required="">
+                        </select>
+                    </div>
+                </div>
+
+               <h2>Responsabilidade de Acesso</h2>
+                <!-- Tipos de Tecnicos responsaveis -->
+                <div id="select_move_abr">
+                    <div class="input-control select">
+                        <select name="lst_listPerfil" id="lst_listPerfil" multiple="" size="10">
+                            <?php echo $view_listPerfil; ?>
+                        </select>
+                    </div>
+                    <div id="controles">
+                        <input type="button" value="Todos" id="move_todos" class="bg-color-orange">      
+                        <input type="button" value="Adicionar" id="move_sel" class="bg-color-orange">
+                        <input type="button" value="Remover" id="remove_sel" class="bg-color-orange">
+                        <input type="button" value="Limpar" id="remove_todos" class="bg-color-orange">
+                    </div>
+                    <div class="input-control select">
+                        <select name="responsabilidade[]" id="responsabilidade" multiple="multiple" size="10">
+                        </select>
+                    </div>
+                </div>  
+
+                <label class="checkbox as-block">
+                    <input type="checkbox" name="status" checked="" value="A"/>
+                    <span>Ativar Perfil</span>
+                </label>
+                
+                <input id="salvar" type="submit" value="Salvar">
+                
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="page secondary">
+    
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Funcionalidade<small>informações</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    
+    <div class="page-region">
+        
+        <div class="page-region-content">
+            
+            <?php echo $view_toolbar; ?>
+
+            <div class="page-control" data-role="page-control">
+
+                <ul>
+                    <li class="active"><a href="#frameI">Identificação</a></li>
+                </ul>
+
+                <div class="frames">
+
+                    <div class="frame active" id="frameI">
+                        <h2>Nome</h2>
+                        <?php echo $view_objFuncionalidade->getNome(); ?>
+                        <h2>Descrição</h2>
+                        <?php echo $view_objFuncionalidade->getDescricao(); ?>
+                        <h2>Perfis</h2>
+                        <?php if (count($view_objFuncionalidade->getPerfis()) > 0): ?>
+                            <?php foreach ($view_objFuncionalidade->getPerfis() as $objPerfil): ?>
+                                <a href="index.php?Perfil/informar/id/<?php echo $objPerfil->getId(); ?>"><?php echo $objPerfil->getNome(); ?></a><br/>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            Não existe Perfis.
+                        <?php endif; ?>
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </div>        
+    </div>
+    
+</div>

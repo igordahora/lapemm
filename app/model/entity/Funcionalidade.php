@@ -27,7 +27,7 @@ class Funcionalidade {
     private $status;
     
     /**
-     * @Relationship (objeto=Perfil,type=ManyToMany,table=perfil_has_funcionalidade)
+     * @Relationship (objeto=Perfil,type=ManyToMany,table=perfil__funcionalidade)
      */
     private $perfis;
 

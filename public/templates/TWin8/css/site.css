@@ -130,6 +130,12 @@ hr {
     left: 0px;
 }
 
+
+label.error{
+    color: red;
+    font-weight: bold;
+}
+
 /* button start */
 
 @media (min-width: 768px) and (max-width: 979px) {

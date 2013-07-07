@@ -1,0 +1,53 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Cadastro<small>Funcionalidade</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <form name="fCadastro" id="fCadastro" action="index.php?Funcionalidade/inserir" method="post">
+                
+                <h2>Nome</h2>
+                <div class="input-control text">
+                    <input type="text" name="nome" id="nome" maxlength="60"  required=""/>
+                </div>
+                <h2>Descrição</h2>
+                <div class="input-control textarea">
+                    <textarea name="descricao" id="descricao" maxlength="250" required=""></textarea>
+                </div>
+                
+                
+                <h2>Perfis</h2>
+                <!-- PERFIS -->
+                <div id="select_move">
+                    <div class="input-control select">
+                        <select name="lst_perfil" id="lst_perfil" multiple="" size="10">
+                            <?php echo $view_listPerfil; ?>
+                        </select>
+                    </div>
+                    <div id="controles">
+                        <input type="button" value="Todos" id="move_todos" class="bg-color-orange">      
+                        <input type="button" value="Adicionar" id="move_sel" class="bg-color-orange">
+                        <input type="button" value="Remover" id="remove_sel" class="bg-color-orange">
+                        <input type="button" value="Limpar" id="remove_todos" class="bg-color-orange">
+                    </div>
+                    <div class="input-control select">
+                        <select name="perfis[]" id="perfis" multiple="multiple" size="10"  required="">
+                        </select>
+                    </div>
+                </div>                
+                
+                
+                <label class="checkbox as-block">
+                    <input type="checkbox" name="status" id="status" checked="" value="A"/>
+                    <span>Ativar Funcionalidade</span>
+                </label>
+                
+                <input type="submit" value="Salvar">
+                
+            </form>
+        </div>
+    </div>
+</div>

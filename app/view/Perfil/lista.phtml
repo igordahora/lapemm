@@ -1,0 +1,43 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Perfil<small>lista</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+
+    <div class="page-region">
+        <div class="page-region-content">
+
+            <div>
+                <?php echo $view_toolbar; ?>
+            </div>
+            
+            <?php if($view_listPerfil != null){ ?>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($view_listPerfil as $objPerfil) : ?>
+                    <tr><td><a href="index.php?Perfil/informar/id/<?php echo $objPerfil->getId(); ?>"><?php echo $objPerfil->getNome(); ?></a></td>
+                        <td><?php echo $objPerfil->getDescricao(); ?></td>
+                    </tr>
+                    <?php endforeach ?>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            <?php } else { ?>
+                     <div class="notices">
+                         <div class="bg-color-yellow">
+                                 <div class="notice-header">Sem informações disponíveis</div>
+                                 <div class="notice-text">Não existem Perfis cadastradas.</div>
+                             </div>
+                         </div>
+            <?php } ?>
+        </div>
+    </div>
+</div>

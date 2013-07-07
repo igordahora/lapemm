@@ -43,7 +43,7 @@ class Integrante {
     private $lattes;
 
     /**
-     * @Colmap = ide_titualacao
+     * @Colmap = ide_titulacao
      * @Persistence (type=inteiro)
      * @Relationship (objeto=Titulacao,type=OneToOne)
      */
@@ -57,12 +57,14 @@ class Integrante {
 
     /**
      * @Colmap = des_telefone
+     * @Mask = telefone
      * @Persistence (type=telefone)
      */
     private $numeroTelefone;
 
     /**
      * @Colmap = des_celular
+     * @Mask = telefone
      * @Persistence (type=telefone)
      */
     private $numeroCelular;
@@ -93,7 +95,7 @@ class Integrante {
 
     /**
      * @Colmap = des_status
-     * @Persistence (type=texto,NotNull=true,size=1)
+     * @Persistence (type=texto,size=1)
      */
     private $status;
     

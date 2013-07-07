@@ -1,0 +1,91 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Perfil<small>Informações</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <?php echo $view_toolbar; ?>
+            <div class="page-control" data-role="page-control">
+                <ul>
+                    <li class="active"><a href="#frameI">Identificação</a></li>
+                    <li><a href="#frameF">Funcionalidades</a></li>
+                    <li><a href="#frameA">Responsabilidade</a></li>
+                </ul>
+                <div class="frames">
+                    <div class="frame active" id="frameI">
+                        <h2>Nome</h2>
+                        <?php echo $view_perfil->getNome(); ?>
+                        <h2>Total Funcionalidades</h2>
+                        <?php echo $view_total_funcionalidades; ?>
+                        <h2>Total Responsabilidade</h2>
+                        <?php echo $view_total_responsabilidade; ?>
+                        <h2>Status</h2>
+                        <?php echo $view_perfil_status; ?>
+                    </div>
+
+                    <div class="frame" id="frameF">
+                        <?php if ($view_perfil->getFuncionalidades() != null) { ?>
+                            <h2>Funcionalidades</h2>
+                            <table class="striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($view_perfil->getFuncionalidades() as $objFuncionalidade) { ?>
+                                        <tr><td><?php echo $objFuncionalidade->getNome(); ?></td>
+                                            <td><?php echo ($objFuncionalidade->getStatus() == "A") ? "Ativo" : "Desativado"; ?></td></tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        <?php } else { ?>
+                            <div class='notices'>
+                                <div class='bg-color-blue'>
+                                    <div class='notice-icon'> <img/> </div>
+                                    <div class='notice-header'>Nenhum Registro</div>
+                                    <div class='notice-text'>Esse perfil não possui funcionalidades.</div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <div class="frame " id="frameA">
+                        
+                        <?php if (count($view_perfil->getResponsabilidade()) > 0): ?>
+                            <h2>Responsabilidade sobre os perfis</h2>
+                            <table class="striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($view_perfil->getResponsabilidade() as $objPerfilResponsavel) { ?>
+                                        <tr><td><?php echo $objPerfilResponsavel->getNome(); ?></td>
+                                            <td><?php echo ($objPerfilResponsavel->getStatus() == "A") ? "Ativo" : "Desativado"; ?></td></tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </table>
+                        <?php else: ?>
+                            <div class='notices'>
+                                <div class='bg-color-blue'>
+                                    <div class='notice-icon'></div>
+                                    <div class='notice-header'>Nenhum Registro</div>
+                                    <div class='notice-text'>Não há responsabilidades associadas.</div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

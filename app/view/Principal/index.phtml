@@ -106,16 +106,16 @@
 <div class="page secondary fixed-header">
     <div class="page-header ">
         <div class="page-header-content">
+            
             <div class="user-login">
-                <a href="#">
                     <div class="name">
                         <span class="first-name"><?php echo $view_nome; ?></span>
                         <span class="last-name"><?php echo $view_sobrenome; ?></span>
                     </div>
+                
                     <div class="avatar">
                         <img src="<?php echo PATH_WEBFILES_URL . "upload/album/" . $view_avatar; ?>"/>
                     </div>
-                </a>
             </div>
 
             <h1 class="fg-color-white"><?php echo NAME_SIS; ?></h1>
@@ -153,9 +153,35 @@
                         </div>
                     </a>
                 <?php endif; ?>
+                
+                <?php if ($view_perfil): ?>
+                    <a href="index.php?Perfil/index">
+                        <div class="tile bg-color-yellow icon">
+                            <div class="tile-content">
+                                <img src="<?php echo PATH_IMAGE_URL; ?>perfil128.png"/>
+                            </div>
+                            <div class="brand">
+                                <span class="name">Perfil</span>
+                            </div>
+                        </div>
+                    </a>
+                <?php endif; ?>
 
+                <?php if ($view_funcionalidade): ?>
+                    <a href="index.php?Funcionalidade/index">
+                        <div class="tile bg-color-red icon">
+                            <div class="tile-content">
+                                <img src="<?php echo PATH_IMAGE_URL; ?>gear128.png"/>
+                            </div>
+                            <div class="brand">
+                                <span class="name">Funcionalidades</span>
+                            </div>
+                        </div>
+                    </a>
+                <?php endif; ?>
+                
             </div>
-            
+
         </div>
     </div>
 </div>

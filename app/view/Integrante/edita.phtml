@@ -6,37 +6,58 @@
 <div class="page secondary">
     <div class="page-header">
         <div class="page-header-content">
-            <h1>Editar<small>Usuário</small></h1>
+            <h1>Cadastro<small>Integrante</small></h1>
             <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
         </div>
     </div>
     <div class="page-region">
         <div class="page-region-content">
-            <form name="fCadastro" id="fCadastro" action="index.php?Usuario/atualizar" method="post">
-
-                <input type="hidden" name="id" id="id"/>
-
+            <form name="fCadastro" id="fCadastro" action="index.php?Integrante/atualizar" method="post">
+                <input type="hidden" name="id">
                 <h2>Nome *</h2>
                 <div class="input-control text">
-                    <input type="text" name="nome" id="nome" maxlength="115" required=""/>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o Nome do Integrante" maxlength="115" required=""/>
                 </div>
-
+                
+                <h2>CPF *</h2>
+                <div class="input-control text">
+                    <input type="text" name="cpf" id="cpf" maxlength="14" style="width: 200px;" required=""/>
+                </div>
+                
+                <h2>Data de Nascimento *</h2>
+                <div class="input-control text">
+                    <input type="text" name="dataNascimento" id="dataNascimento" maxlength="10" style="width: 200px;" required=""/>
+                </div>
+                
                 <h2>Email *</h2>
                 <div class="input-control text">
-                    <input type="text" name="email" id="email" maxlength="115" required=""/>
+                    <input type="text" name="email" id="email" placeholder="Digite o E-mail" maxlength="115" required=""/>
                 </div>
-
-                <h2>Perfil *</h2>
+                
+                <h2>Lattes (url)</h2>
+                <div class="input-control text">
+                    <input type="text" name="lattes" id="lattes" placeholder="Digite a URL do Curriculo Lattes" maxlength="150" />
+                </div>
+                
+                <h2>Titulação *</h2>
                 <div class="input-control select">
-                    <select id="perfil" name="perfil" required="">
+                    <select name="titulacao" id="titulacao" required="">
                         <option value="" selected="selected">Selecione</option>
-                        <?php
-                        echo $view_listPerfil;
-                        ?>
+                        <?php echo $view_listTitulacao; ?>
                     </select>
                 </div>
+                
+                <h2>Número Telefone (Fixo) </h2>
+                <div class="input-control text">
+                    <input type="text" name="numeroTelefone" id="numeroTelefone" maxlength="14" style="width: 200px;" />
+                </div>
+                
+                <h2>Número Telefone (Celular) </h2>
+                <div class="input-control text">
+                    <input type="text" name="numeroCelular" id="numeroCelular" maxlength="14" style="width: 200px;"/>
+                </div>
 
-                <input type="submit" name="editar" value="Salvar">
+                <input type="submit" value="Salvar">
             </form>
         </div>
     </div>
