@@ -1,0 +1,54 @@
+/* 
+    Document   : paginacao
+    Created on : 12/06/2013, 09:07:14
+    Author     : igorsantos
+    Description:
+        style para paginacão
+*/
+
+#paginacao {
+    font-size: 100%;
+    color: #333; 
+    background: #FFF; 
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+}
+#paginacao ul {
+    list-style-type: none;
+}
+#paginacao li {
+    float: left;
+    display: inline;
+    margin: 0 5px 0 0;
+    display: block;
+}
+#paginacao li a {
+    color: #88af3f;
+    padding: 5px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    float: left;
+}
+#paginacao li a:hover {
+    color: #638425;
+    background: #f1ffd6;
+    border: 1px solid #85bd1e;
+}
+#paginacao li.nolink {
+    color: #CCC;
+    border: 1px solid #F3F3F3;
+    padding: 4px;
+}
+
+#paginacao li.npage {
+    color: #CCC;
+    float: right;
+    padding: 4px;
+}
+
+#paginacao li.current {
+    color: #FFF;
+    border: 1px solid #b2e05d;
+    padding: 4px;
+    background: #b2e05d;
+}

@@ -1,0 +1,78 @@
+/* 
+    Document   : temp_template
+    Created on : 18/11/2012, 20:42:37
+    Author     : igor
+    Description:
+        Template basico das paginas do sistema.
+*/
+
+/*body*/
+body{
+    font-family:"Georgia";
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Principal*/
+.principal{
+    width: 960px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+/* LIMPAR */
+#clear{
+    clear: both;
+}
+
+
+
+/*PROPRIEDADES DO TITULO E URL MAP DO SITE*/
+#titulo{
+    height: 50px;
+    margin-bottom: 8px; 
+	margin-top:52px;
+}
+
+#container-contents #titulo h2 {
+    color: #7CC9A2;
+    float: left;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 50px;
+}
+
+#titulo span {
+    float: right;
+    font-size: 14px;
+    line-height: 50px;
+    margin: 0px;
+}
+
+
+.migalha{
+    display:block;
+    margin-bottom:18px;
+    color: #3E2727 !important;
+    margin-right: -5px;
+    padding-right: 12px;
+    text-decoration: none;
+    float:right;
+}
+
+.align-migalha{
+    margin-right:0px;
+    margin-top: 28px;
+}
+
+/** FIM PROPRIEDADES DO TITULO **/
+
+p {
+    text-align: justify;
+}
+
+img{
+    border: none;
+}

@@ -1,0 +1,41 @@
+<style>
+    #box {alignment-adjust: central; height:480px; left:50%; margin:-240px 0 0 -240px; position:absolute; top:50%; width:500px;}
+</style>
+<div id="box">
+    <h1><?php echo NAME_SIS; ?></h1>
+    <h4><?php echo DESCRICAO_SIS; ?></h4>
+    <?php echo $view_feedback; ?>
+    <br/>
+    <?php if ($view_error) : ?>
+        <div class="notices">
+            <div class="bg-color-red">
+                <div class="notice-icon"><img src="<?php echo PATH_TEMPLATE_URL ?>images/shield-user.png"></div>
+                <div class="notice-image"><img src="<?php echo PATH_TEMPLATE_URL ?>images/armor.png"></div>
+                <div class="notice-header fg-color-yellow">Falha no Logon</div>
+                <div class="notice-text"><?php echo $view_message; ?></div>
+            </div>
+        </div>
+    <?php endif; ?>
+    <form name="fLogin" id="fLogin" action="index.php?Security/logar" method="post">
+        <div style="width: 300px;">
+            <h2>Login</h2>
+            <div class="input-control text">
+                <input type="email" name="email" id="email" placeholder="Digite o email" required=""/>
+            </div>
+            <h2>Senha</h2>
+            <div class="input-control password">
+                <input type="password" name="senha" id="senha" placeholder="Digite a senha" required=""/>
+            </div>
+            <br/>
+            <input class="bg-color-darken" type="submit" name="acesso" value="Acessar"/>
+            <a href="index.php?Index/resgatar">Esqueceu sua senha?</a>
+        </div>
+       
+    </form>
+    
+</div>
+
+<div id="inf_rodape" style="position: absolute;bottom: 0;color: white;">
+    <small>Coordenação de Modernização :: Versão <?php echo VERSAO; ?></small>
+</div>
+

@@ -1,0 +1,34 @@
+#menu-rodape li {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-style:normal;
+    display:inline;
+    font-size:14px;
+    list-style:none;
+    font-style: normal;
+    list-style: none outside none;
+    margin-left: 2px;
+}
+
+#menu-rodape ul{
+    text-align: center;
+    padding: 10px;
+    line-height: 2px;	
+}
+
+#menu-rodape li a{
+    color:#FFF;
+    text-decoration:none;
+}
+
+/*a:hover*/
+#menu-rodape ul li a:hover {
+    /*color: #70b391;*/
+}
+
+/*a*/
+#menu-rodape ul li a{
+    color:#fff;
+    text-decoration: none;
+    text-transform:capitalize;
+    padding-right:2px;
+}

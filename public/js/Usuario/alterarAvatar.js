@@ -1,0 +1,3 @@
+$(function(){
+    $("#frm-jcrop").validate();
+});

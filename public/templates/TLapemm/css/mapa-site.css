@@ -1,0 +1,55 @@
+/* 
+    Document   : mapa-site
+    Created on : 19/11/2012, 00:49:56
+    Author     : igor
+    Description:
+        Stype do mapa de sites parceiros
+*/
+
+/*DIV MAPA*/
+#container-footer #container-mapa .principal #mapa{
+    text-align:left;
+    float:left;
+    width:615px;
+    border-right: 0px solid #FFF;
+	padding: 19px 0;
+	box-shadow: 12px 0 14px -14px #CCCCCC;
+    
+	
+}
+
+#container-mapa .principal #mapa .colunas{ 
+    float:left;
+}
+
+#mapa .colunas ul li{
+    list-style-type:none; 
+    background:url("/lapemm/web-files/images/rodape/marcador.png") no-repeat 0 12px scroll transparent;
+    display:block; 
+    overflow:hidden;
+}
+
+#mapa .colunas ul li a { 
+    display:block; 
+    margin-left: 14px; 
+    font-family:Arial, Helvetica, sans-serif; 
+    list-style-type:none; 
+    margin-top: 9px;
+    text-decoration:none; 
+    font-size:12px; 
+    color:#666;
+}
+
+#mapa .colunas ul li a:hover{ 
+    /*color:#33BA77;*/ 
+    text-decoration:underline;
+}
+
+
+#mapa .colunas ul .titulo-links{
+    /*color: #7CC9A2;*/
+	color:#666;
+    display: block;
+    font-size: 14px;
+    margin-top: 15px;
+} 

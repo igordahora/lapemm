@@ -1,0 +1,13 @@
+#RewriteEngine On
+#RewriteCond %{SCRIPT_FILENAME} !-f
+#RewriteCond %{SCRIPT_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php?key=$1
+
+# ACESSO NÃO AUTORIZADO - ERRO 401
+ErrorDocument 401 /lapemm3/index.php?Errors/HTTP_401
+# ACESSO NEGADO - ERRO 403 
+ErrorDocument 403 /lapemm3/index.php?Errors/HTTP_403
+# PAGINA NÃO EXISTE - ERRO 404
+ErrorDocument 404 /lapemm3/index.php?Errors/HTTP_404
+# ERRO INTERNO DO SERVIDOR - ERRO 500
+ErrorDocument 500 /lapemm3/index.php?Errors/HTTP_500

@@ -1,0 +1,42 @@
+/* 
+    Document   : contato
+    Created on : 19/11/2012, 00:43:26
+    Author     : igor
+    Description:
+        Css do contato
+*/
+
+/*DIV CONTATO*/
+#container-mapa .principal #contato{
+	font-family:Arial, Helvetica, sans-serif;
+    color: #666;
+    font-size: 13px;
+    padding: 19px 0;
+    text-align: left;
+    width: 277px;
+    float:right;
+   margin-bottom:28px;
+}
+
+#container-mapa .principal #contato #logo-brasao{
+    float:left;
+    margin-top:15px;
+    margin-bottom:15px;
+    clear: both;
+}
+
+#container-mapa .principal #contato #tel{
+    display: block;
+    color:#666;
+    font-size: 22px;
+    margin-bottom: 6px;
+    float:left;
+}
+
+#container-mapa .principal #contato #email{
+    font-size:13px; 
+    float:left; 
+    margin: 9px 0; 
+    color:#666; 
+    font-family:Arial, Helvetica, sans-serif;
+}

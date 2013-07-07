@@ -1,0 +1,114 @@
+<style>
+    div#topbar{
+        margin:0 0 12px 0;
+        background-color:#ccc;
+        padding:12px;
+        -moz-border-radius:6px;
+        -webkit-border-radius:6px;
+        border-radius:6px;
+        width:90%;
+    }
+
+    div#topbar ul{ list-style:none; }
+    div#topbar ul li{ float:left; margin:0 12px 0 0;} 
+
+    div#div-preview
+    {
+        overflow: hidden; 
+        width: 100px; 
+        height: 100px; 
+        margin-left: 5px;
+        background-color:#ccc;
+        margin:12px;
+        border:12px solid #ccc;
+        float:right;
+        z-index: 120;
+    }
+
+
+</style>
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Usuário<small>alterar foto de perfil</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <?php if (!$view_crop): ?>
+                <form name="frm-jcrop" id="frm-jcrop" method="post" action="index.php?Usuario/carregarImagem" enctype="multipart/form-data">
+                    <h2>Envie uma imagem:</h2>
+                    <div class="input-control">
+                        <input type="file" name="imagem" id="imagem" required=""/>
+                    </div>
+                    <br/>
+                    <input type="submit" value="Enviar" />
+
+                </form>
+            <?php else: ?>
+
+                <div id="div-jcrop">
+                    <div class="image-container bg-color-darken" style="width: 600px;">
+                        <?php echo $view_img; ?>
+                        <div class="overlay">
+                            <h2 style="color: white;">Recorte a imagem</h2>   
+                        </div>
+                    </div>
+                    <input type="button" value="Salvar" id="btn-crop" /> 
+                </div>
+                <div id="debug">
+                    <input type="hidden" id="x"/>
+                    <input type="hidden" id="x2"/>
+                    <input type="hidden" id="y"/>
+                    <input type="hidden" id="y2"/>
+                    <input type="hidden" id="h"/>
+                    <input type="hidden" id="w"/>
+                </div>
+                <script type="text/javascript">
+                    var img = '<?php echo $view_nome; ?>';
+                    $(function(){
+                        $('#jcrop').Jcrop({
+                            onChange: exibePreview,
+                            onSelect: exibePreview,
+                            aspectRatio: 1
+                        });
+                        $('#btn-crop').click(function(){
+                            $.post( 'index.php?Usuario/cortarImagem', {
+                                img:img, 
+                                x: $('#x').val(), 
+                                y: $('#y').val(), 
+                                w: $('#w').val(), 
+                                h: $('#h').val()
+                            }, function(){
+                                $(window.document.location).attr('href','index.php?Principal/index/feedback/5');
+                            });
+                            return false;
+                        });
+                    });
+                				
+                    function exibePreview(c)
+                    {
+                        var rx = 100 / c.w;
+                        var ry = 100 / c.h;
+                				
+                        $('#preview').css({
+                            width: Math.round(rx * <?php echo $view_imagesize[0]; ?>) + 'px',
+                            height: Math.round(ry * <?php echo $view_imagesize[1]; ?>) + 'px',
+                            marginLeft: '-' + Math.round(rx * c.x) + 'px',
+                            marginTop: '-' + Math.round(ry * c.y) + 'px'
+                        });
+                					
+                        $('#x').val(c.x);
+                        $('#y').val(c.y);
+                        $('#x2').val(c.x2);
+                        $('#y2').val(c.y2);
+                        $('#w').val(c.w);
+                        $('#h').val(c.h);
+                					
+                    };
+                </script>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>

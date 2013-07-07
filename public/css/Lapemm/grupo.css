@@ -1,0 +1,27 @@
+/*COLUNA ESQUERDA GRUPO*/
+#coluna-esquerda-grupo{
+    margin-top: 30px;
+    text-align:left;
+    float:left;
+    width:450px;
+    height: 360px;
+    background: #EEFFFF;
+    padding: 5px;
+    border: solid 1px #B6E0CB;
+    border-radius: 8px;	
+    border-shadow: 10px 10px 5px #F7F7F7;
+    -moz-border-radius: 10px;		
+}
+
+/*COLUNA DIREITA GRUPO*/
+#coluna-direita-grupo{
+    text-align:left;
+    float:right;
+    width: 450px;
+}
+
+#foto-grupo img{
+    width:450px;
+    height: 360px;
+}
+/*FIM CONTEUDO GRUPO*/

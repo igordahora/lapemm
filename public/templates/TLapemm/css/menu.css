@@ -1,0 +1,56 @@
+/*CONTAINER MENU*/
+#container-menu{
+    height: 60px;
+}
+
+#container-menu #logo{
+    float:left;
+    width:354px;
+    height:130px;
+    position: absolute;
+    margin-top: -34px;
+    
+}
+
+/*MENU*/
+#container-menu #menu{
+    float: right;
+    list-style:none;
+    
+    
+}
+
+/*UL*/
+#container-menu #menu ul{
+    font-size: 19px;
+    margin-top: 21px;
+}
+
+/*LI*/
+#container-menu #menu ul li{
+    float: left;
+    list-style:none;
+    margin-right:14px;
+}
+
+/*a:hover*/
+#container-menu #menu ul li a:hover {
+    color: #70b391;
+	text-shadow: 0 1px #deeaea;
+}
+
+/*a*/
+#container-menu #menu ul li a{
+    color: #f2f6f4;
+    text-decoration: none;
+    font-size:17px;
+	margin-right: 5px;
+	
+}
+
+#shadow{ 
+    background: #7dcaa3 url("/lapemm/web-files/images/topo/menu-bg.png") repeat-x;
+    border-radius:10px;
+    width:960px;
+    height:70px;
+}

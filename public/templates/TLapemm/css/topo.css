@@ -1,0 +1,37 @@
+/* 
+    Document   : topo
+    Created on : 18/11/2012, 22:23:57
+    Author     : igor
+    Description:
+        style destinados ao topo da pagina.
+*/
+
+
+/*---INICIO HEADER---*/
+
+/*CONTAINER-HEADER*/
+#container-header{
+    text-align: left;
+    background: #FFF;
+}
+
+/*TOPO*/
+#container-header #topo{
+    height: 150px;
+}
+
+#container-header #topo #container-topo-cima{
+    height: 58px;
+    background:#FFF;
+}
+
+#container-header .infor-topo-texto{
+    float:right; 
+    display:block; 
+    font-size:12px; 
+    margin-top:36px; 
+    margin-right:14px; 
+    color:#666;
+}
+
+/*---FIM HEADER---*/

@@ -1,0 +1,77 @@
+<div id="titulo" class="align-migalha">
+
+    <h2>O LAPEMM</h2>	
+
+    <span>
+        <a class="migalha" href="<?php echo PATH_URL; ?>Lapemm/quemsomos" title="Lapemm">Lapemm</a>
+        <a class="migalha" href="<?php echo PATH_URL; ?>Lapemm" title="Página principal">Home >></a>      
+    </span>
+
+    <div id="clear"></div>
+
+</div>
+
+<div id="coluna-esquerda">		
+
+    <div id="conteudo">
+
+        <div class="especial">O LAPEMM é um grupo de Pesquisa em Matéria Médica, composto por 6 pesquisadores, 25 estudantes e 1 técnico.</div> 
+
+        <ul>
+            <h4 class="subtitulo">Objetivos</h4>
+            <li><strong>1.</strong> Estudar a composição de micromoléculas da flora regional, com especial interesse nas plantas que ocorrem no semi árido;</li> 
+            <li><strong>2.</strong> Aplicação de métodos extrativos não poluentes, como a extração por fluido supercrítico na obtenção destas substâncias;</li>
+            <li><strong>3.</strong> O desenvolvimento de sistemas transportadores para extratos, óleos voláteis, frações e substâncias puras com atenção a microesferas, hidrogéis micelares e lipossomas uni e multilamelares.</li>
+        </ul>
+
+        <p>Nos projetos desenvolvidos pelo grupo visa-se também a descoberta de novos agentes antifungícos e antibióticos, aplicáveis a cepas resistentes aos agentes convencionalmente empregados. Estão envolvidos nesses estudos alunos de inciação científica, mestrado e doutorado.</p> 
+        <p>Estes projetos são desenvolvidos em colaboração com grupos baseados no Instituto de Química (IQ) e da Ciências da Saúde (ICS) da UFBA, Departamento de Química da UFJF e Departamento Química da UFMT e no Centro Gonçalo Muniz da Fiocruz (BA). </p>
+
+    </div>
+
+    <div id="clear"></div>
+
+    <div class="divisao">
+        
+        <?php if(is_array($view_listLinhaDePesquisa)):?>
+        <h4 class="subtitulo">Linha de Pesquisa</h4>
+
+        <div id="conteudo">
+            
+            <ul>
+                <?php foreach ($view_listLinhaDePesquisa as $objLinahDePesquisa): ?>
+                    <span class="titulo-lp"><?php echo $objLinahDePesquisa->getNome(); ?></span>
+                    <li class="linha-pesquisa"><?php echo $objLinahDePesquisa->getDescricao(); ?></li>
+                <?php endforeach; ?>
+            </ul> 
+
+        </div>
+        <?php endif; ?>
+    </div>
+
+    <div id="clear"></div>
+
+</div>
+
+
+<div id="coluna-direita">
+
+    <div id="infra-geral" >
+        <?php //echo $view_infraestrutura; ?>
+
+<!--        <ul id="mycarousel" class="jcarousel jcarousel-skin-tango">
+            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/1.png"; ?>" alt="" /></li>
+            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/2.png"; ?>" alt="" /></li>
+            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/3.png"; ?>" alt="" /></li>
+            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/2.png"; ?>" alt="" /></li>
+            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/3.png"; ?>" alt="" /></li>
+            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/4.png"; ?>" alt="" /></li>-->
+
+        </ul>
+
+    </div>
+</div>
+
+<div id="clear"></div>
+
+</div>

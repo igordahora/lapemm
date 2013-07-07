@@ -1,0 +1,20 @@
+<style>
+    #box {alignment-adjust: central; height:480px; left:50%; margin:-240px 0 0 -240px; position:absolute; top:50%; width:500px;}
+</style>
+<div id="box">
+    <a href="javascript:history.go(-1)" class="back-button big page-back" style="float: left;margin-right: 20px;"></a>
+    <h2><?php echo NAME_SIS; ?></h2>
+    <h4>Recuperação de Acesso ao Sistema</h4>
+    <br/>
+    <form name="fLogin" id="fLogin" action="index.php?Security/recuperar" method="post">
+        <h2>Email</h2>
+
+        <div class="input-control text" >
+            <input type="text" name="email" id="email" maxlength="120" style="width: 500px;" required=""/>
+        </div>
+        <div class="input-control text" >
+            <input type="submit" value="Recuperar" id="salvar" class="bg-color-darken">
+        </div>
+
+    </form>    
+</div>

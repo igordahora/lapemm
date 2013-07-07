@@ -1,0 +1,46 @@
+/* 
+    Document   : rodape
+    Created on : 18/11/2012, 23:27:35
+    Author     : igor
+    Description:
+        style destinados ao rodape
+*/
+
+/*INICIO FOOTER*/
+
+/*CONTAINER-FOOTER*/
+#container-footer{
+    text-align: left;
+    background: #FEFEFE;	
+}
+
+/*CONTAINER-MAPA*/
+#container-footer #container-mapa{
+    /*background: url("/lapemm/web-files/images/rodape/bg-links.png") repeat-x;*/
+    margin-top: 72px;
+	background:#F7FAF8;
+}
+
+/*CONTAINER-RODAPE*/
+#container-footer #container-rodape{
+    background: url("/lapemm/web-files/images/rodape/bg-rodape.png") repeat-x transparent; 
+    border-top: 1px solid #f0f0f0;
+	padding-top: 20px;
+    padding-bottom: 20px;
+    height:63px;
+	/*background:#FFF;*/
+}
+
+/*RODAPE*/
+#container-rodape #rodape{
+    color: #FFFFFF;
+	font-family: arial;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/*RODAPE p*/
+#container-rodape #rodape span{
+    padding-top: 10px;
+}

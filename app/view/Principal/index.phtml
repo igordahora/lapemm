@@ -1,0 +1,148 @@
+<style>
+    #oculto-menu{
+        position:fixed;
+        right:0;
+        height: 100%;
+        width: 20px;
+        z-index: 999;
+    }
+
+    #menu-over{
+        position:fixed;
+        right:0;
+        /*background:#000;*/
+        height: 100%;
+        width: 110px;
+        filter:alpha(opacity=30, finishopacity=30, style=1); 
+        opacity:.8;
+        -khtml-opacity:.3; 
+        border:none; 
+        z-index: 990;
+    }
+
+    #menu-over #container{
+        /*margin: 30px 0px 0px 0px;*/
+        padding: 10px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //Ocultar o toogle no carregamento da página
+        $("#menu-over").width("10px");
+        //Exibir o conteúdo quando clicar sobre o H2
+        $("#menu-over").hover(function(){
+            $(this).stop(true, false).animate({ width: "110px" },500);
+            $(this).css("background",'#000');
+        }, function() {
+            $(this).stop(true, false).animate({ width: "10px" },1000,function(){$(this).css("background",'none');});
+        });
+        
+        
+    });
+</script>
+<div id="menu-over" style="">
+
+    <div id="container">
+        <a href="index.php?Usuario/informar/id/<?php echo $view_idUsuario; ?>">
+            <button class="shortcut" style="background: none;">
+                <span class="icon fg-color-white">
+                    <i class="icon-cabinet"></i>
+                </span>
+                <span class="label fg-color-white">
+                    Meus Dados
+                </span>
+            </button>
+        </a>
+        <a href="index.php?Usuario/alterarAvatar">
+            <button class="shortcut" style="background: none;">
+                <span class="icon fg-color-white">
+                    <i class="icon-camera"></i>
+                </span>
+                <span class="label fg-color-white">
+                    Alterar Foto
+                </span>
+            </button>
+        </a>
+        <a href="index.php?Usuario/alterarSenha">
+            <button class="shortcut" style="background: none;">
+                <span class="icon fg-color-white">
+                    <i class="icon-key-2"></i>
+                </span>
+                <span class="label fg-color-white">
+                    Alterar Senha
+                </span>
+            </button>
+        </a>
+        <button class="shortcut" style="background: none;">
+            <span class="icon fg-color-white">
+                <i class="icon-cog"></i>
+            </span>
+            <span class="label fg-color-white">
+                Configurações
+            </span>
+        </button>
+        <button class="shortcut" style="background: none;">
+            <span class="icon fg-color-white">
+                <i class="icon-mail"></i>
+            </span>
+            <span class="label fg-color-white">
+                Mensagens
+            </span>
+            <span class="badge bg-color-orangeDark">15</span>
+        </button>
+        <a href="index.php?Security/deslogar" style="position:absolute; bottom: 0;">
+            <button class="shortcut" style="background: none;">
+                <span class="icon fg-color-yellow">
+                    <i class="icon-exit"></i>
+                </span>
+                <span class="label fg-color-yellow">
+                    Sair
+                </span>
+            </button>
+        </a>
+    </div>
+</div>
+
+<div class="page secondary fixed-header">
+    <div class="page-header ">
+        <div class="page-header-content">
+            <div class="user-login">
+                <a href="#">
+                    <div class="name">
+                        <span class="first-name"><?php echo $view_nome; ?></span>
+                        <span class="last-name"><?php echo $view_sobrenome; ?></span>
+                    </div>
+                    <div class="avatar">
+                        <img src="<?php echo PATH_WEBFILES_URL . "upload/album/" . $view_avatar; ?>"/>
+                    </div>
+                </a>
+            </div>
+
+            <h1 class="fg-color-white"><?php echo NAME_SIS; ?></h1>
+        </div>
+    </div>
+
+    <div class="page-region">
+
+        <div class="page-region-content tiles">
+
+            <div class="tile-group tile-drag">
+
+                <?php if ($view_usuario): ?>
+                    <a href="index.php?Usuario/index">
+                        <div class="tile bg-color-blue icon">
+                            <div class="tile-content">
+                                <img src="<?php echo PATH_IMAGE_URL; ?>usuario128.png"/>
+                            </div>
+                            <div class="brand">
+                                <span class="name">Usuário</span>
+                            </div>
+                        </div>
+                    </a>
+                <?php endif; ?>
+
+            </div>
+            
+        </div>
+    </div>
+</div>

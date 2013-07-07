@@ -1,0 +1,33 @@
+<div class="page secondary">    
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Usuário<small>Alterar Senha</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <form name="fCadastro" id="fCadastro" action="index.php?Usuario/atualizar" method="post">
+                <input type="hidden" name="id" id="ide_usuario" value="<?php echo $view_objUsuario->getId(); ?>"/>
+                
+                <h2>Senha Atual</h2>
+                <div class="input-control text">
+                    <input type="password" name="senha_atual" id="senha_atual" maxlength="18" required="" style="width: 200px;"/>
+                </div>
+                
+                <h2>Nova Senha</h2>
+                <div class="input-control text">
+                    <input type="password" name="senha" class="password" id="des_senha_new" maxlength="18" required="" style="width: 200px;"/>
+                </div>
+               
+	
+                <h2>Confirme Nova Senha</h2>
+                <div class="input-control text">
+                    <input type="password" name="des_senha_conf" id="des_senha_conf" maxlength="18" required="" style="width: 200px;"/>
+                </div>
+                <input type="submit" name='alterar_senha' value="Salvar" id="salvar">
+            </form>
+
+        </div>
+    </div>
+</div>

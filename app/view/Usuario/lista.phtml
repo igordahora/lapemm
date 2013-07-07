@@ -1,0 +1,40 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Usuários<small>lista</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+
+    <div class="page-region">
+        <div class="page-region-content">
+            <!-- inicio table com lista de usuarios -->
+            <div>
+                <?php echo $view_toolbar; ?>    
+            </div>
+            <?php if (is_array($view_listUsuarios)): ?>
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-Mail</th>
+                            <th>Perfil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($view_listUsuarios as $objUsuario) : ?>
+                            <tr>
+                                <td><a href="index.php?Usuario/informar/id/<?php echo $objUsuario->getId(); ?>"><?php echo FormatHelper::convertMaiusculo($objUsuario->getNome()); ?></a></td>
+                                <td><?php echo $objUsuario->getEmail(); ?></td>
+                                <td><?php echo $objUsuario->getPerfil()->getNome(); ?></td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            <?php else: ?>
+                <h3>Nenhum usuario encontrado.</h3>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
