@@ -15,8 +15,8 @@ class IntegranteController extends TWin8 {
 
     public function listar() {
         $this->addDados('toolbar', TWin8Helper::displayToolBar( array('novo') ) );
-        $Integrantes = $this->logic->listar(null, 'nome', true);
-        $this->addDados("listIntegrantes", $Integrantes);
+        $integrantes = $this->logic->listar(null, 'nome', true);
+        $this->addDados("listIntegrante", $integrantes);
         $this->TPageSecondary('lista');
     }
 

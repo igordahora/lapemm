@@ -1,0 +1,58 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Usuário<small>Informações</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+
+        <div class="page-region-content">
+
+            <?php echo $view_toolbar; ?>
+
+            <div class="page-control" data-role="page-control">
+
+                <ul>
+                    <li class="active"><a href="#frameI">Identificação</a></li>
+                </ul>
+
+                <div class="frames">
+                    
+                    <div class="frame active" id="frameI">
+
+                        <h2>Nome</h2>
+                        <?php echo $view_objUsuario->getNome(); ?>
+
+                        <h2>E-mail</h2>
+                        <?php echo $view_objUsuario->getEmail(); ?>
+
+                        <h2>Perfil</h2>            
+                        <?php if ($view_objUsuario->getPerfil() !== null): ?>
+
+                            <?php if ($view_perfilLogado == 1): ?>
+                                <a href="index.php?Perfil/informar/id/<?php echo $view_objUsuario->getPerfil()->getId(); ?>">
+                                    <?php echo $view_objUsuario->getPerfil()->getNome(); ?>
+                                </a>
+                            <?php else: ?>
+                                <?php echo $view_objUsuario->getPerfil()->getNome(); ?>
+                            <?php endif; ?>
+
+                        <?php else: ?>
+                            Perfil não informado.
+                        <?php endif; ?>
+
+                        <h2>Ultimo Acesso</h2>
+                        <?php echo date('d/m/Y',$view_objUsuario->getDataUltimoAcesso()).' às '. date('H:m:s',$view_objUsuario->getDataUltimoAcesso()); ?>
+
+                        <h2>Status</h2>
+                        <?php echo ($view_objUsuario->getStatus() === 'A') ? 'Ativo' : 'Desativado'; ?>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

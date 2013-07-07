@@ -1,0 +1,40 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Integrantes<small>lista</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+
+    <div class="page-region">
+        <div class="page-region-content">
+            <!-- inicio table com lista de usuarios -->
+            <div>
+                <?php echo $view_toolbar; ?>    
+            </div>
+            <?php if (is_array($view_listIntegrante)): ?>
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th>CPF</th>
+                            <th>Nome</th>
+                            <th>E-Mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($view_listIntegrante as $objIntegrante) : ?>
+                            <tr>
+                                <td><?php echo $objIntegrante->getPerfil()->getNumeroCpf(); ?></td>
+                                <td><a href="index.php?Integrante/informar/id/<?php echo $objIntegrante->getId(); ?>"><?php echo FormatHelper::convertMaiusculo($objIntegrante->getNome()); ?></a></td>
+                                <td><?php echo $objIntegrante->getEmail(); ?></td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            <?php else: ?>
+                <h3>Nenhum Integrante encontrado.</h3>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
