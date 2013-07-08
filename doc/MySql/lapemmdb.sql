@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `funcionalidade` (
   `des_status` char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`ide_funcionalidade`),
   UNIQUE KEY `nom_funcionalidade_UNIQUE` (`nom_funcionalidade`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Extraindo dados da tabela `funcionalidade`
@@ -42,7 +42,19 @@ CREATE TABLE IF NOT EXISTS `funcionalidade` (
 INSERT INTO `funcionalidade` (`ide_funcionalidade`, `nom_funcionalidade`, `des_funcionalidade`, `des_status`) VALUES
 (1, 'Usuario_listar', 'Lista de Usuarios', 'A'),
 (2, 'Usuario_cadastrar', 'Cadastro de Usuarios', 'A'),
-(3, 'Usuario_editar', 'Edição de Usuarios', 'A');
+(3, 'Usuario_editar', 'Edição de Usuarios', 'A'),
+(4, 'Integrante_listar', 'Lista de Integrantes', 'A'),
+(5, 'Integrante_cadastrar', 'Cadastro de Integrantes', 'A'),
+(6, 'Integrante_editar', 'Edição de Integrantes', 'A'),
+(7, 'Perfil_listar', 'Lista de Perfis', 'A'),
+(8, 'Perfil_cadastrar', 'Cadastro de Perfis', 'A'),
+(9, 'Perfil_editar', 'Edição de Perfis', 'A'),
+(10, 'Funcionalidade_listar', 'Lista Funcionalidades', 'A'),
+(11, 'Funcionalidade_cadastrar', 'Cadastro de Funcionalidades', 'A'),
+(12, 'Funcionalidade_editar', 'Edição de Funcionalidades', 'A'),
+(13, 'LinhaDePesquisa_listar', 'Lista de Linha de Pesquisa', 'A'),
+(14, 'LinhaDePesquisa_cadastrar', 'Cadastro de Linha de Pesquisa', 'A'),
+(15, 'LinhaDePesquisa_editar', 'Edição da Linha de Pesquisa', 'A');
 
 -- --------------------------------------------------------
 
@@ -56,8 +68,8 @@ CREATE TABLE IF NOT EXISTS `integrante` (
   `nom_integrante` varchar(120) NOT NULL,
   `dat_nascimnto` varchar(8) NOT NULL,
   `des_email` varchar(120) NOT NULL,
+  `ide_titulacao` int(11) NOT NULL,
   `des_lattes` varchar(150) DEFAULT NULL,
-  `ide_titualacao` int(11) NOT NULL,
   `nom_foto` varchar(115) DEFAULT NULL,
   `des_telefone` varchar(10) DEFAULT NULL,
   `des_celular` varchar(10) DEFAULT NULL,
@@ -70,8 +82,15 @@ CREATE TABLE IF NOT EXISTS `integrante` (
   UNIQUE KEY `nom_integrante_UNIQUE` (`nom_integrante`),
   UNIQUE KEY `num_cpf_UNIQUE` (`num_cpf`),
   UNIQUE KEY `des_email_UNIQUE` (`des_email`),
-  KEY `fk_integrante_titulacao1_idx` (`ide_titualacao`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `fk_integrante_titulacao1_idx` (`ide_titulacao`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `integrante`
+--
+
+INSERT INTO `integrante` (`ide_integrante`, `num_cpf`, `nom_integrante`, `dat_nascimnto`, `des_email`, `ide_titulacao`, `des_lattes`, `nom_foto`, `des_telefone`, `des_celular`, `ide_usuario_criador`, `dat_criacao`, `ide_usuario_atualizador`, `dat_atualizacao`, `des_status`) VALUES
+(1, '01337940593', 'IGOR DA HORA SANTOS', '19850213', 'igordahora@gmail.com', 1, 'http://www.lattes.com.br?lattes=3', NULL, '7133079472', '7186220139', 1, 1373232547, 1, 1373232704, 'A');
 
 -- --------------------------------------------------------
 
@@ -89,7 +108,16 @@ CREATE TABLE IF NOT EXISTS `linhadepesquisa` (
   `dat_atualizacao` int(11) DEFAULT NULL,
   `des_status` char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`ide_linhadepesquisa`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `linhadepesquisa`
+--
+
+INSERT INTO `linhadepesquisa` (`ide_linhadepesquisa`, `nom_linha`, `des_linha`, `ide_usuario_criador`, `dat_criacao`, `ide_usuario_atualizador`, `dat_atualizacao`, `des_status`) VALUES
+(1, 'ESTUDO FITOQUÍMICO E AVALIAÇÃO DA ATIVIDADE BIOLÓGICA', '<div align="justify"><font face="arial" size="3"><u><b>Objetivo:</b></u></font><br><br><font face="arial" size="3">Estabelecer a composição química de micro moléculas presentes em plantas que apresentem as seguintes atividades biológicas:</font><br><br><blockquote><font face="arial" size="3">a) Atividade antifúngica e / ou antibacteriana ou moduladora da resistência.<br></font></blockquote><blockquote><font face="arial" size="3">b) Capazes de atuar promovendo o crescimento ou diferenciação sobre cultura de astrócitos e glioblastomas. <br></font></blockquote><blockquote><font face="arial" size="3">c) Avaliar a influência de extratos e substâncias isoladas na atividade da Pgp. Buscando de identificar produtos naturais capazes de afetar a farmacocinética de seus substratos.</font><br></blockquote></div><br>', 1, 1373251575, 1, 1373253442, 'A'),
+(2, 'PLANEJAMENTO DE FÁRMACOS CONTRA DOENÇAS TROPICAIS', '<div align="justify"><font face="arial" size="3"><u><b>Objetivo:</b></u></font><font face="arial" size="3"><br><br></font></div><div align="justify"><font face="arial" size="3">Utilizar ferramentas computacionais para racionalizar as relações estrutura atividade de moléculas bioativas consideradas candidatas a protótipos de novos fármacos contra doenças tropicais. Os conjuntos de inibidores identificados, contendo os dados de estrutura e atividade inibitória correspondentes, organizados e classificados, serão a base científica para os estudos de modelagem molecular e o desenvolvimento de modelos de QSAR e QSAR-3D preditivos.</font><br></div>', 1, 1373253147, 1, 1373253458, 'A'),
+(3, 'TÉCNICAS COMPUTACIONAIS NO PLANEJAMENTO DE FÁRMACOS', '<div align="justify"><font face="arial" size="3"><u><b>Objetivo:</b></u><br><br>a) Predição da estrutura de proteínas e de complexos moleculares;<br><br>b) Desenho computacional de fármacos para inibição de enzimas no combate à esquistossomose, leishmaniose, doença de chagas e doença do sono.<br></font></div>', 1, 1373252692, 1, 1373253525, 'A');
 
 -- --------------------------------------------------------
 
@@ -134,7 +162,19 @@ CREATE TABLE IF NOT EXISTS `perfil__funcionalidade` (
 INSERT INTO `perfil__funcionalidade` (`ide_perfil`, `ide_funcionalidade`) VALUES
 (1, 1),
 (1, 2),
-(1, 3);
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(1, 8),
+(1, 9),
+(1, 10),
+(1, 11),
+(1, 12),
+(1, 13),
+(1, 14),
+(1, 15);
 
 -- --------------------------------------------------------
 
@@ -184,11 +224,18 @@ CREATE TABLE IF NOT EXISTS `projeto` (
 --
 
 CREATE TABLE IF NOT EXISTS `titulacao` (
-  `ide_titualacao` int(11) NOT NULL AUTO_INCREMENT,
-  `nom_titualcao` varchar(80) NOT NULL,
-  `des_titualcao` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`ide_titualacao`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `ide_titulacao` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_titulacao` varchar(80) NOT NULL,
+  `des_titulacao` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`ide_titulacao`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `titulacao`
+--
+
+INSERT INTO `titulacao` (`ide_titulacao`, `nom_titulacao`, `des_titulacao`) VALUES
+(1, 'Aluno', 'Aluno');
 
 -- --------------------------------------------------------
 
@@ -237,7 +284,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`ide_usuario`, `nom_usuario`, `email`, `des_senha`, `avatar`, `ide_perfil`, `num_acessos`, `try_logon`, `dat_try_logon`, `dat_ultimo_acesso`, `ide_usuario_criador`, `dat_criacao`, `ide_usuario_atualizador`, `dat_atualizacao`, `des_status`) VALUES
-(1, 'IGOR DA HORA SANTOS', 'igordahora@gmail.com', 'dcb15ce9052a80a2d6537fcd2f8f0768', NULL, 1, 4, 0, 0, 1373155413, 1, 0, NULL, NULL, 'A'),
+(1, 'IGOR DA HORA SANTOS', 'igordahora@gmail.com', 'dcb15ce9052a80a2d6537fcd2f8f0768', NULL, 1, 13, 0, 0, 1373250089, 1, 0, NULL, NULL, 'A'),
 (2, 'EDISON', 'edison@capacidadeevolutiva.com.br', 'd71bb00a7e194c13110cad3aece8ed7f', NULL, 1, 0, 0, 0, NULL, 1, 1372902569, 1, 1372903314, 'A');
 
 --
@@ -248,7 +295,7 @@ INSERT INTO `usuario` (`ide_usuario`, `nom_usuario`, `email`, `des_senha`, `avat
 -- Restrições para a tabela `integrante`
 --
 ALTER TABLE `integrante`
-  ADD CONSTRAINT `fk_integrante_titulacao1` FOREIGN KEY (`ide_titualacao`) REFERENCES `titulacao` (`ide_titualacao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_integrante_titulacao1` FOREIGN KEY (`ide_titulacao`) REFERENCES `titulacao` (`ide_titulacao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para a tabela `perfil__funcionalidade`
