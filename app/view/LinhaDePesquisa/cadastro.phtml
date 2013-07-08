@@ -1,0 +1,27 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Cadastro<small>Linha de Pesquisa</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <form name="fCadastro" id="fCadastro" action="index.php?LinhaDePesquisa/inserir" method="post">
+                
+                <h2>Nome</h2>
+                <div class="input-control text">
+                    <input type="text" name="nome" id="nome" maxlength="120"  required=""/>
+                </div>
+                
+                <h2>Descrição</h2>
+                <div class="input-control textarea">
+                    <textarea cols="100" rows="16" id="txEditor" name="descricao" id="descricao" required=""></textarea>
+                </div>
+                
+                <input type="submit" value="Salvar">
+                
+            </form>
+        </div>
+    </div>
+</div>

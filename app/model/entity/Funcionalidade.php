@@ -23,6 +23,7 @@ class Funcionalidade {
 
     /**
      * @Colmap = des_status
+     * @Persistence (type=texto,size=1)
      */
     private $status;
     

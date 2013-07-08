@@ -1,0 +1,45 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Linha de Pesquisa<small>lista</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+
+    <div class="page-region">
+        <div class="page-region-content">
+            <!-- inicio table com lista de usuarios -->
+            <div>
+                <?php echo $view_toolbar; ?>    
+            </div>
+
+            <?php if (is_array($view_listLinhaDePesquisa)): ?>
+            
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($view_listLinhaDePesquisa as $objLinhaDePesquisa) : ?>
+                        
+                            <tr>
+                                <td>
+                                    <a href="index.php?LinhaDePesquisa/informar/id/<?php echo $objLinhaDePesquisa->getId(); ?>">
+                                        <?php echo FormatHelper::convertMaiusculo($objLinhaDePesquisa->getNome()); ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                        <?php endforeach ?>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            
+            <?php else: ?>
+                <h3>Nenhuma Linha de Pesquisa encontrado.</h3>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>

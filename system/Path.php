@@ -91,8 +91,8 @@ class Path {
         define('PATH_IMAGE_URL', PATH_WEBFILES_URL . "images/");
         define('PATH_CSS_URL', PATH_WEBFILES_URL . "css/");
         define('PATH_JS_URL', PATH_WEBFILES_URL . "js/");
+        define('PATH_PLUGIN_URL', PATH_WEBFILES_URL . 'plugin/');
         define('PATH_JS_CORE_URL', PATH_JS_URL . "core/");
-
         // VERSION
         define('VERSAO', $config['versionamento']['versao']);
     }

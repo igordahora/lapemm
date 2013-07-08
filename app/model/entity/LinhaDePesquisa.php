@@ -13,13 +13,13 @@ class LinhaDePesquisa {
 
     /**
      * @Colmap = nom_linha
-     * @Persistence (type=texto,NotNull=true)
+     * @Persistence (type=texto,NotNull=true,MaxSize=120)
      */
     private $nome;
 
     /**
      * @Colmap = des_linha
-     * @Persistence (type=texto)
+     * @Persistence (type=texto,NotNull=true)
      */
     private $descricao;
 
@@ -49,7 +49,7 @@ class LinhaDePesquisa {
 
     /**
      * @Colmap = des_status
-     * @Persistence (type=texto,NotNull=true,size=1)
+     * @Persistence (type=texto,size=1)
      */
     private $status;
 

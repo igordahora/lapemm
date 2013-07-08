@@ -32,20 +32,20 @@
     <div id="clear"></div>
 
     <div class="divisao">
-        
-        <?php if(is_array($view_listLinhaDePesquisa)):?>
-        <h4 class="subtitulo">Linha de Pesquisa</h4>
 
-        <div id="conteudo">
-            
-            <ul>
-                <?php foreach ($view_listLinhaDePesquisa as $objLinahDePesquisa): ?>
-                    <span class="titulo-lp"><?php echo $objLinahDePesquisa->getNome(); ?></span>
-                    <li class="linha-pesquisa"><?php echo $objLinahDePesquisa->getDescricao(); ?></li>
-                <?php endforeach; ?>
-            </ul> 
+        <?php if (is_array($view_listLinhaDePesquisa)): ?>
+            <h4 class="subtitulo">Linha de Pesquisa</h4>
 
-        </div>
+            <div id="conteudo">
+
+                <ul>
+                    <?php foreach ($view_listLinhaDePesquisa as $objLinahDePesquisa): ?>
+                        <span class="titulo-lp"><?php echo $objLinahDePesquisa->getNome(); ?></span>
+                        <li class="linha-pesquisa"><?php echo $objLinahDePesquisa->getDescricao(); ?></li>
+                    <?php endforeach; ?>
+                </ul> 
+
+            </div>
         <?php endif; ?>
     </div>
 
@@ -59,13 +59,13 @@
     <div id="infra-geral" >
         <?php //echo $view_infraestrutura; ?>
 
-<!--        <ul id="mycarousel" class="jcarousel jcarousel-skin-tango">
-            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/1.png"; ?>" alt="" /></li>
-            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/2.png"; ?>" alt="" /></li>
-            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/3.png"; ?>" alt="" /></li>
-            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/2.png"; ?>" alt="" /></li>
-            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/3.png"; ?>" alt="" /></li>
-            <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/4.png"; ?>" alt="" /></li>-->
+        <!--        <ul id="mycarousel" class="jcarousel jcarousel-skin-tango">
+                    <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/1.png";   ?>" alt="" /></li>
+                    <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/2.png";   ?>" alt="" /></li>
+                    <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/3.png";   ?>" alt="" /></li>
+                    <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/2.png";   ?>" alt="" /></li>
+                    <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/3.png";   ?>" alt="" /></li>
+                    <li><img src="<?php //echo PATH_URL_IMAGES . "infraestrutura/4.png";   ?>" alt="" /></li>-->
 
         </ul>
 

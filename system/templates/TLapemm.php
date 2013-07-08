@@ -14,7 +14,6 @@ class TLapemm extends Controller {
         $this->HTML = new THtmlHelper();
         $this->NAVIGATOR = TBrowserHelper::getBrowser();
         define('PATH_TEMPLATE_URL', PATH_WEBFILES_URL . 'templates/' . __CLASS__ . "/");
-        define('PATH_PLUGIN_URL', PATH_WEBFILES_URL . 'plugin/');
         define("PATH_VIEW_TEMPLATE_CORE", VIEWS . "core/");
     }
 

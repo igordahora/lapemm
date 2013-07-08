@@ -50,20 +50,23 @@ class FuncionalidadeController extends TWin8 {
     }
 
     public function inserir() {
+        
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-        # verificar se campo status - caso vazil, adicionar status D
-        if ($_POST['status'] == '') {
-            $_POST['status'] = 'D';
+            $salvar = $this->logic->salvar($_POST);
+
+            if ($salvar[0]) {
+                TFeedbackHelper::creatFeedbackOK('Funcionalidade cadastrada com sucesso!!!');
+                $this->REDIRECT->goToAction('listar');
+            } else {
+                TFeedbackHelper::creatFeedbackError('Ocorreu um erro no cadastrado, os dados não foram salvo!!!');
+                $this->REDIRECT->goToAction('cadastrar');
+            }
+            
+        } else {
+            $this->REDIRECT->goToAction('listar');
         }
-
-        $return = $this->logic->salvar($_POST, false);
-
-        if (!$return[0]) {
-            $this->REDIRECT->setUrlParameter('feedback', 0);
-            $this->REDIRECT->goToAction('cadastrar');
-        }
-
-        $this->REDIRECT->goToAction('listar');
+        
     }
 
     public function editar() {

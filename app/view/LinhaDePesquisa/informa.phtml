@@ -1,0 +1,28 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Linha de Pesquisa<small>informações</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <?php echo $view_toolbar; ?>
+            <div class="page-control" data-role="page-control">
+                
+                <ul>
+                    <li class="active"><a href="#frameI">Identificação</a></li>
+                </ul>
+                
+                <div class="frames">
+                    
+                    <div class="frame active" id="frameI">
+                        <h2>Nome</h2>
+                        <?php echo $view_objLinhaDePesquisa->getNome(); ?>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
