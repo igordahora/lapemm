@@ -42,11 +42,13 @@ class TLapemm extends Controller {
 
         # Inicia o buffer
         ob_start();
-
+        
         #cabeçalho
         require_once PATH_VIEW_TEMPLATE_CORE . "header.phtml";
+        
         # Incluir view no tamplate
         $this->view($nome);
+        
         #Rodapé
         require_once PATH_VIEW_TEMPLATE_CORE . "footer.phtml";
 

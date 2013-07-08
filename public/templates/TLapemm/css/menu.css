@@ -49,7 +49,7 @@
 }
 
 #shadow{ 
-    background: #7dcaa3 url("/lapemm/web-files/images/topo/menu-bg.png") repeat-x;
+    background: #7dcaa3 url("/lapemm/public/templates/TLapemm/images/menu-bg.png") repeat-x;
     border-radius:10px;
     width:960px;
     height:70px;

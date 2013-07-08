@@ -24,7 +24,7 @@
 
 #mapa .colunas ul li{
     list-style-type:none; 
-    background:url("/lapemm/web-files/images/rodape/marcador.png") no-repeat 0 12px scroll transparent;
+    background:url("/lapemm/public/templates/TLapemm/images/marcador.png") no-repeat 0 12px scroll transparent;
     display:block; 
     overflow:hidden;
 }
