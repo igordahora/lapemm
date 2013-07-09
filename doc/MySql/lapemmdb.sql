@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `funcionalidade` (
   `des_status` char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`ide_funcionalidade`),
   UNIQUE KEY `nom_funcionalidade_UNIQUE` (`nom_funcionalidade`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Extraindo dados da tabela `funcionalidade`
@@ -54,7 +54,10 @@ INSERT INTO `funcionalidade` (`ide_funcionalidade`, `nom_funcionalidade`, `des_f
 (12, 'Funcionalidade_editar', 'Edição de Funcionalidades', 'A'),
 (13, 'LinhaDePesquisa_listar', 'Lista de Linha de Pesquisa', 'A'),
 (14, 'LinhaDePesquisa_cadastrar', 'Cadastro de Linha de Pesquisa', 'A'),
-(15, 'LinhaDePesquisa_editar', 'Edição da Linha de Pesquisa', 'A');
+(15, 'LinhaDePesquisa_editar', 'Edição da Linha de Pesquisa', 'A'),
+(16, 'Projeto_listar', 'Lista de Projetos', 'A'),
+(17, 'Projeto_cadastrar', 'Cadastro de Projetos', 'A'),
+(18, 'Projeto_editar', 'Edição de projetos', 'A');
 
 -- --------------------------------------------------------
 
@@ -101,7 +104,8 @@ INSERT INTO `integrante` (`ide_integrante`, `num_cpf`, `nom_integrante`, `dat_na
 CREATE TABLE IF NOT EXISTS `linhadepesquisa` (
   `ide_linhadepesquisa` int(11) NOT NULL AUTO_INCREMENT,
   `nom_linha` varchar(120) NOT NULL,
-  `des_linha` text NOT NULL,
+  `des_linha` varchar(250) NOT NULL,
+  `pub_linha` text NOT NULL,
   `ide_usuario_criador` int(11) NOT NULL,
   `dat_criacao` int(11) NOT NULL,
   `ide_usuario_atualizador` int(11) DEFAULT NULL,
@@ -114,10 +118,10 @@ CREATE TABLE IF NOT EXISTS `linhadepesquisa` (
 -- Extraindo dados da tabela `linhadepesquisa`
 --
 
-INSERT INTO `linhadepesquisa` (`ide_linhadepesquisa`, `nom_linha`, `des_linha`, `ide_usuario_criador`, `dat_criacao`, `ide_usuario_atualizador`, `dat_atualizacao`, `des_status`) VALUES
-(1, 'ESTUDO FITOQUÍMICO E AVALIAÇÃO DA ATIVIDADE BIOLÓGICA', '<div align="justify"><font face="arial" size="3"><u><b>Objetivo:</b></u></font><br><br><font face="arial" size="3">Estabelecer a composição química de micro moléculas presentes em plantas que apresentem as seguintes atividades biológicas:</font><br><br><blockquote><font face="arial" size="3">a) Atividade antifúngica e / ou antibacteriana ou moduladora da resistência.<br></font></blockquote><blockquote><font face="arial" size="3">b) Capazes de atuar promovendo o crescimento ou diferenciação sobre cultura de astrócitos e glioblastomas. <br></font></blockquote><blockquote><font face="arial" size="3">c) Avaliar a influência de extratos e substâncias isoladas na atividade da Pgp. Buscando de identificar produtos naturais capazes de afetar a farmacocinética de seus substratos.</font><br></blockquote></div><br>', 1, 1373251575, 1, 1373253442, 'A'),
-(2, 'PLANEJAMENTO DE FÁRMACOS CONTRA DOENÇAS TROPICAIS', '<div align="justify"><font face="arial" size="3"><u><b>Objetivo:</b></u></font><font face="arial" size="3"><br><br></font></div><div align="justify"><font face="arial" size="3">Utilizar ferramentas computacionais para racionalizar as relações estrutura atividade de moléculas bioativas consideradas candidatas a protótipos de novos fármacos contra doenças tropicais. Os conjuntos de inibidores identificados, contendo os dados de estrutura e atividade inibitória correspondentes, organizados e classificados, serão a base científica para os estudos de modelagem molecular e o desenvolvimento de modelos de QSAR e QSAR-3D preditivos.</font><br></div>', 1, 1373253147, 1, 1373253458, 'A'),
-(3, 'TÉCNICAS COMPUTACIONAIS NO PLANEJAMENTO DE FÁRMACOS', '<div align="justify"><font face="arial" size="3"><u><b>Objetivo:</b></u><br><br>a) Predição da estrutura de proteínas e de complexos moleculares;<br><br>b) Desenho computacional de fármacos para inibição de enzimas no combate à esquistossomose, leishmaniose, doença de chagas e doença do sono.<br></font></div>', 1, 1373252692, 1, 1373253525, 'A');
+INSERT INTO `linhadepesquisa` (`ide_linhadepesquisa`, `nom_linha`, `des_linha`, `pub_linha`, `ide_usuario_criador`, `dat_criacao`, `ide_usuario_atualizador`, `dat_atualizacao`, `des_status`) VALUES
+(1, 'Estudo fitoquímico e avaliação da atividade biológica', 'Estudo fitoquímico e avaliação da atividade biológica', '<div align="justify"><font face="arial" size="3"><u><b>Objetivo</b></u><br><br>Estabelecer a composição química de micro moléculas presentes em plantas que apresentem as seguintes atividades biológicas:<br></font><blockquote><font face="arial" size="3">a) Atividade antifúngica e / ou antibacteriana ou moduladora da resistência.<br></font></blockquote><blockquote><font face="arial" size="3">b) Capazes de atuar promovendo o crescimento ou diferenciação sobre cultura de astrócitos e glioblastomas. <br></font></blockquote><blockquote><font face="arial" size="3">c) Avaliar a influência de extratos e substâncias isoladas na atividade da Pgp. Buscando de identificar produtos naturais capazes de afetar a farmacocinética de seus substratos.</font><br></blockquote></div>', 1, 1373339368, 1, 1373340937, 'A'),
+(2, 'Planejamento de fármacos contra doenças tropicais', 'Planejamento de fármacos contra doenças tropicais', '<div align="justify"><font size="3"><u><b>Objetivo</b></u><br><br>Utilizar ferramentas computacionais para racionalizar as relações estrutura atividade de moléculas bioativas consideradas candidatas a protótipos de novos fármacos contra doenças tropicais. Os conjuntos de inibidores identificados, contendo os dados de estrutura e atividade inibitória correspondentes, organizados e classificados, serão a base científica para os estudos de modelagem molecular e o desenvolvimento de modelos de QSAR e QSAR-3D preditivos.<br></font></div>', 1, 1373340928, NULL, NULL, 'A'),
+(3, 'Técnicas computacionais no planejamento de Fármacos', 'Técnicas computacionais no planejamento de Fármacos', '<div align="justify"><font size="3"><u><b>Objetivo<br><br></b></u></font><div align="justify"><blockquote><font size="3">a) Predição da estrutura de proteínas e de complexos moleculares;</font><br><br><font size="3">b) Desenho computacional de fármacos para inibição de enzimas no combate à esquistossomose, leishmaniose, doença de chagas e doença do sono.</font><br></blockquote></div></div>', 1, 1373341021, 1, 1373341100, 'A');
 
 -- --------------------------------------------------------
 
@@ -174,7 +178,10 @@ INSERT INTO `perfil__funcionalidade` (`ide_perfil`, `ide_funcionalidade`) VALUES
 (1, 12),
 (1, 13),
 (1, 14),
-(1, 15);
+(1, 15),
+(1, 16),
+(1, 17),
+(1, 18);
 
 -- --------------------------------------------------------
 
@@ -207,7 +214,8 @@ CREATE TABLE IF NOT EXISTS `projeto` (
   `ide_projeto` int(11) NOT NULL AUTO_INCREMENT,
   `ide_linhadepesquisa` int(11) NOT NULL,
   `nom_projeto` varchar(120) NOT NULL,
-  `des_projeto` text NOT NULL,
+  `des_projeto` varchar(250) NOT NULL,
+  `pub_projeto` text NOT NULL,
   `ide_usuario_criador` int(11) NOT NULL,
   `dat_criacao` int(11) NOT NULL,
   `ide_usuario_atualizador` int(11) DEFAULT NULL,
@@ -215,7 +223,14 @@ CREATE TABLE IF NOT EXISTS `projeto` (
   `des_status` char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`ide_projeto`,`ide_linhadepesquisa`),
   KEY `fk_projeto_linhadepesquisa1_idx` (`ide_linhadepesquisa`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `projeto`
+--
+
+INSERT INTO `projeto` (`ide_projeto`, `ide_linhadepesquisa`, `nom_projeto`, `des_projeto`, `pub_projeto`, `ide_usuario_criador`, `dat_criacao`, `ide_usuario_atualizador`, `dat_atualizacao`, `des_status`) VALUES
+(1, 1, 'Projeto 01', 'Determinar o projeto 01', '<u><b>Objetivo</b></u><br><br><div align="justify">Teste de inserção do projeto:<br><blockquote>Tabulacao 01<br>Tabulacao 02<br>Tabulacao 03<br></blockquote></div><br><br>', 1, 1373340609, NULL, NULL, 'A');
 
 -- --------------------------------------------------------
 
@@ -284,7 +299,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`ide_usuario`, `nom_usuario`, `email`, `des_senha`, `avatar`, `ide_perfil`, `num_acessos`, `try_logon`, `dat_try_logon`, `dat_ultimo_acesso`, `ide_usuario_criador`, `dat_criacao`, `ide_usuario_atualizador`, `dat_atualizacao`, `des_status`) VALUES
-(1, 'IGOR DA HORA SANTOS', 'igordahora@gmail.com', 'dcb15ce9052a80a2d6537fcd2f8f0768', NULL, 1, 13, 0, 0, 1373250089, 1, 0, NULL, NULL, 'A'),
+(1, 'IGOR DA HORA SANTOS', 'igordahora@gmail.com', 'dcb15ce9052a80a2d6537fcd2f8f0768', NULL, 1, 16, 0, 0, 1373336628, 1, 0, NULL, NULL, 'A'),
 (2, 'EDISON', 'edison@capacidadeevolutiva.com.br', 'd71bb00a7e194c13110cad3aece8ed7f', NULL, 1, 0, 0, 0, NULL, 1, 1372902569, 1, 1372903314, 'A');
 
 --
