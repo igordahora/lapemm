@@ -1,37 +1,44 @@
 <?php
 
 /**
- * @Table = linhadepesquisa
+ * @Table = projeto
  */
-class LinhaDePesquisa {
+class Projeto {
 
     /**
      * @Serial
-     * @Colmap = ide_linhadepesquisa
+     * @Colmap = ide_projeto
      */
     private $id;
 
     /**
-     * @Colmap = nom_linha
+     * @Colmap = ide_linhadepesquisa
+     * @Relationship (objeto=LinhaDePesquisa,type=OneToOne)
+     * @Persistence (type=inteiro,NotNull=true)
+     */
+    private $linhaDePesquisa;
+
+    /**
+     * @Colmap = nom_projeto
      * @Persistence (type=texto,NotNull=true,MaxSize=120)
      */
     private $nome;
 
     /**
-     * @Colmap = des_linha
+     * @Colmap = des_projeto
      * @Persistence (type=texto,NotNull=true,MaxSize=250)
      */
     private $descricao;
-
+    
     /**
-     * @Colmap = pub_linha
+     * @Colmap = pub_projeto
      * @Persistence (type=texto,NotNull=true)
      */
     private $publicacao;
-
+    
     /**
      * @Colmap = ide_usuario_criador
-     * @Persistence (type=texto,NotNull=true)
+     * @Persistence (type=inteiro,NotNull=true)
      */
     private $idUsuarioCriador;
 
@@ -43,7 +50,7 @@ class LinhaDePesquisa {
 
     /**
      * @Colmap = ide_usuario_atualizador
-     * @Persistence (type=texto)
+     * @Persistence (type=inteiro)
      */
     private $idUsuarioAtualizador;
 
@@ -65,6 +72,14 @@ class LinhaDePesquisa {
 
     public function setId($id) {
         $this->id = $id;
+    }
+
+    public function getLinhaDePesquisa() {
+        return $this->linhaDePesquisa;
+    }
+
+    public function setLinhaDePesquisa($linhaDePesquisa) {
+        $this->linhaDePesquisa = $linhaDePesquisa;
     }
 
     public function getNome() {

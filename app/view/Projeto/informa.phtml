@@ -1,7 +1,7 @@
 <div class="page secondary">
     <div class="page-header">
         <div class="page-header-content">
-            <h1>Linha de Pesquisa<small>informações</small></h1>
+            <h1>Projeto<small>informações</small></h1>
             <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
         </div>
     </div>
@@ -19,14 +19,17 @@
                     
                     <div class="frame active" id="frameI">
                         <h2>Nome</h2>
-                        <?php echo $view_objLinhaDePesquisa->getNome(); ?>
+                        <?php echo $view_objProjeto->getNome(); ?>
                         <h2>Descricao</h2>
-                        <?php echo $view_objLinhaDePesquisa->getDescricao(); ?>
+                        <?php echo $view_objProjeto->getDescricao(); ?>
+                        <h2>Linha de Pesquisa</h2>
+                        <?php echo $view_objProjeto->getLinhaDePesquisa()->getNome(); ?>
                     </div>
+                    
                     <div class="frame" id="frameP">
                         <h2>Conteudo Publicado (WebSite)</h2>
                         <hr><br />
-                        <?php echo $view_objLinhaDePesquisa->getPublicacao(); ?>
+                        <?php echo $view_objProjeto->getPublicacao(); ?>
                     </div>
 
                 </div>

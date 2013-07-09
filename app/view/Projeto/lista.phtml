@@ -1,7 +1,7 @@
 <div class="page secondary">
     <div class="page-header">
         <div class="page-header-content">
-            <h1>Linha de Pesquisa<small>lista</small></h1>
+            <h1>Projeto<small>lista</small></h1>
             <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
         </div>
     </div>
@@ -13,8 +13,8 @@
                 <?php echo $view_toolbar; ?>    
             </div>
 
-            <?php if (is_array($view_listLinhaDePesquisa)): ?>
-            
+            <?php if (is_array($view_listProjeto)): ?>
+
                 <table class="striped">
                     <thead>
                         <tr>
@@ -23,26 +23,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($view_listLinhaDePesquisa as $objLinhaDePesquisa) : ?>
-                        
+                        <?php foreach ($view_listProjeto as $objProjeto) : ?>
+
                             <tr>
                                 <td>
-                                    <a href="index.php?LinhaDePesquisa/informar/id/<?php echo $objLinhaDePesquisa->getId(); ?>">
-                                        <?php echo FormatHelper::convertMaiusculo($objLinhaDePesquisa->getNome()); ?>
+                                    <a href="index.php?Projeto/informar/id/<?php echo $objProjeto->getId(); ?>">
+                                        <?php echo FormatHelper::convertMaiusculo($objProjeto->getNome()); ?>
                                     </a>
                                 </td>
                                 <td>
-                                     <?php echo $objLinhaDePesquisa->getDescricao(); ?>
+                                    <?php echo $objProjeto->getDescricao(); ?>
                                 </td>
                             </tr>
-                            
+
                         <?php endforeach ?>
                     </tbody>
                     <tfoot></tfoot>
                 </table>
-            
+
             <?php else: ?>
-                <h3>Nenhuma Linha de Pesquisa encontrado.</h3>
+                <h3>Nenhuma Projeto encontrado.</h3>
             <?php endif; ?>
         </div>
     </div>

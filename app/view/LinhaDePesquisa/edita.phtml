@@ -14,14 +14,19 @@
         <div class="page-region-content">
             <form name="fCadastro" id="fCadastro" action="index.php?LinhaDePesquisa/atualizar" method="post">
                 <input type="hidden" name="id">
-                <h2>Nome</h2>
+                <h2>Nome *</h2>
                 <div class="input-control text">
                     <input type="text" name="nome" id="nome" maxlength="120"  required=""/>
                 </div>
                 
-                <h2>Descrição</h2>
+                <h2>Descrição *</h2>
                 <div class="input-control textarea">
-                    <textarea cols="100" rows="16" id="txEditor" name="descricao" id="descricao" required=""></textarea>
+                    <textarea name="descricao" id="descricao" required="" maxlength="250"></textarea>
+                </div>
+
+                <h2>Publicação *</h2>
+                <div class="input-control textarea">
+                    <textarea cols="100" rows="16" id="txEditor" name="publicacao" id="publicacao" required=""></textarea>
                 </div>
                 
                 <input type="submit" value="Salvar">
