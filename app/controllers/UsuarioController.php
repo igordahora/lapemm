@@ -49,8 +49,6 @@ class UsuarioController extends TWin8 {
 
         # Add Perfil
         $objLogicPerfil = new PerfilLogic();
-
-        #$perfis = $objLogicPerfil->listar("ide_perfil IN ({$responsabilidade})", "nome");
         $perfis = $objLogicPerfil->listar("ide_perfil IN ({$responsabilidade})", "nome");
 
         # Lista de perfis

@@ -23,6 +23,7 @@ class PrincipalController extends TWin8 {
         $this->addDados('perfil', $this->SECURITY->isAllowed('perfil'));
         $this->addDados('funcionalidade', $this->SECURITY->isAllowed('funcionalidade'));
         $this->addDados('linhaDePesquisa', $this->SECURITY->isAllowed('linhadepesquisa'));
+        $this->addDados('projeto', $this->SECURITY->isAllowed('projeto'));
         
         $objUsuarioLogic = new UsuarioLogic();
         $objUsuario = $objUsuarioLogic->obterPorId($this->SECURITY->getUsuario()->getId());
