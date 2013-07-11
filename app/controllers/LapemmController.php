@@ -55,7 +55,6 @@ class LapemmController extends TLapemm {
     }
 
     /**
-     * 
      * Exibir pagina de projetos
      */
     public function projetos() {
@@ -66,9 +65,9 @@ class LapemmController extends TLapemm {
         # CSS
         $this->HTML->addCss(PATH_CSS_URL . $this->_controller . "/" . $this->_action . ".css");
 
-        # Iniciar class ProjetosModel
-//        $projetosModel = new ProjetosModel();
-//        $dadosConteudo['projetos'] = $projetosModel->exibirListaDeProjetos();
+        # Lista de projetos
+        $objProjetoLocic = new ProjetoLogic();
+        $this->addDados('listProjeto', $objProjetoLocic->listar("des_status = 'A'", 'nome'));
 
         $this->TView('projetos');
     }

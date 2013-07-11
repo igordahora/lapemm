@@ -11,5 +11,23 @@
 
 </div>
 
+<?php if (is_array($view_listProjeto)): ?>
+    <?php $tProjetos = count($view_listProjeto); ?>
+    <?php foreach ($view_listProjeto as $key => $objProjeto): ?>
+        <div id="projeto">
+            
+            <h4><?php echo $objProjeto->getNome(); ?></h4>
+            <p><?php echo $objProjeto->getDescricao(); ?></p>
+            <span class="participantes"><strong>Integrantes:</strong> Jo&atilde;o Mourais, Henrique Santos e Eduardo Viera.</span>
+            <span class="ex-integrantes"><strong>Ex-integrantes:</strong> Amanda Preira, Marcelo dos Santos e Eduardo Costa.</span>
+            
+            <?php if($key === ($tProjetos - 1) ): ?>
+                <div id="clear" ></div>
+            <?php else: ?>
+                <div id="clear" class="borda"></div>
+            <?php endif; ?>            
+        </div>
+    <?php endforeach; ?>
 
-<?php echo $view_projetos; ?>
+<?php endif; ?>
+

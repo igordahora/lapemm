@@ -1,0 +1,33 @@
+<div class="page secondary">    
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Usuário<small>Alterar Senha</small></h1>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <form name="fCadastro" id="fCadastro" action="index.php?Security/salvarSenha" method="post">
+                
+                <input type="hidden" name="token" id="token" value="<?php echo $view_token; ?>" />
+                
+                <h2>Senha de Autenticação</h2>
+                <div class="input-control text">
+                    <input type="password" name="senhaAutenticacao" id="senhaAutenticacao" maxlength="8" required="" style="width: 200px;"/>
+                </div>
+                
+                <h2>Nova Senha</h2>
+                <div class="input-control text">
+                    <input type="password" name="senha" class="password" id="des_senha_new" maxlength="18" required="" style="width: 200px;"/>
+                </div>
+               
+                <h2>Confirme Nova Senha</h2>
+                <div class="input-control text">
+                    <input type="password" name="des_senha_conf" id="des_senha_conf" maxlength="18" required="" style="width: 200px;"/>
+                </div>
+                
+                <input type="submit" value="Salvar" id="salvar">
+                <span><?php echo $view_tentativas; ?></span>
+            </form>
+        </div>
+    </div>
+</div>

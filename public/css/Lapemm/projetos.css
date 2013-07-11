@@ -1,6 +1,7 @@
 /*INICIO CONTEUDO PROJETOS*/
-#projeto{
-	border-bottom: 1px solid #CCCCCC;
+.borda{
+    border-bottom: 1px solid #CCCCCC;
+    padding-top: 15px;
 }
 
 #projeto p {
@@ -11,32 +12,32 @@
 
 /* titulo do projeto */
 #projeto h4 {
-	font-size:20px;
-	color: #666666;
-	font-weight:bold;
+    font-size:20px;
+    color: #666666;
+    font-weight:bold;
 }
 
 /* LISTA DE PARTICIPANTES */
 #projeto .participantes{
-	float:left;
-	font-size:14px;
-	font-style:italic;
-	width:735px;
-	padding:5px;
-	background:#fffff4;
-	
+    float:left;
+    font-size:14px;
+    font-style:italic;
+    width:735px;
+    padding:5px;
+    background:#fffff4;
+
 }
 
 /* LISTA DE EX-INTEGRANTES */
 #projeto .ex-integrantes{
-	display: block;
+    display: block;
     float: left;
     font-size: 14px;
     font-style: italic;
     margin-top: 6px;
-	width:735px;
-	padding:5px;
-	background:#fffff4;
+    width:735px;
+    padding:5px;
+    background:#fffff4;
 }
 
 /*FIM CONTEUDO PROJETOS*/
