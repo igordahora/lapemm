@@ -8,14 +8,14 @@
 
 /*DIV CONTATO*/
 #container-mapa .principal #contato{
-	font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     color: #666;
     font-size: 13px;
     padding: 19px 0;
     text-align: left;
     width: 277px;
     float:right;
-   margin-bottom:28px;
+    margin-bottom:28px;
 }
 
 #container-mapa .principal #contato #logo-brasao{
