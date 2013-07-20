@@ -14,7 +14,7 @@ class PrincipalController extends TWin8 {
         $this->addDados('nome', current($arrayNome));
         $this->addDados('sobrenome', end($arrayNome));
         unset($arrayNome);
-        
+
         #id colaborador
         $this->addDados('idUsuario', $this->SECURITY->getUsuario()->getId());
         
@@ -24,6 +24,7 @@ class PrincipalController extends TWin8 {
         $this->addDados('funcionalidade', $this->SECURITY->isAllowed('funcionalidade'));
         $this->addDados('linhaDePesquisa', $this->SECURITY->isAllowed('linhadepesquisa'));
         $this->addDados('projeto', $this->SECURITY->isAllowed('projeto'));
+        $this->addDados('publicacao', $this->SECURITY->isAllowed('publicacao'));
         
         $objUsuarioLogic = new UsuarioLogic();
         $objUsuario = $objUsuarioLogic->obterPorId($this->SECURITY->getUsuario()->getId());

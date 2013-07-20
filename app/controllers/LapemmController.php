@@ -12,10 +12,10 @@ class LapemmController extends TLapemm {
      */
     public function home() {
         # JS
-        $this->HTML->addJavaScript(PATH_PLUGIN_URL . "plugin/Jq-tiles/jquery.tiles.min.js");
+        $this->HTML->addJavaScript(PATH_PLUGIN_URL . "JQueryTiles/jquery.tiles.min.js");
         $this->HTML->addCss(PATH_JS_URL . $this->_controller . "/" . $this->_action . ".js");
         # CSS
-        $this->HTML->addCss(PATH_PLUGIN_URL . "plugin/Jq-tiles/jquery.tiles.min.css");
+        $this->HTML->addCss(PATH_PLUGIN_URL . "JQueryTiles/jquery.tiles.min.css");
         $this->HTML->addCss(PATH_CSS_URL . $this->_controller . "/" . $this->_action . ".css");
 
         $this->TView('home');

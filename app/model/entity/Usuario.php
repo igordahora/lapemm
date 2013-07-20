@@ -91,9 +91,10 @@ class Usuario {
 
     /**
      * @Colmap = des_status
-     * @Persistence (type=texto,NotNull=true,size=1)
+     * @Persistence (type=texto,size=1)
      */
     private $status;
+    
     private $security;
 
     public function getId() {

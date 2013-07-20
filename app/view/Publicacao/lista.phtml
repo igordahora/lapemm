@@ -1,0 +1,42 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Integrantes<small>lista</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+
+    <div class="page-region">
+        <div class="page-region-content">
+            <!-- inicio table com lista de usuarios -->
+            <div>
+                <?php echo $view_toolbar; ?>    
+            </div>
+            <?php if (is_array($view_listPublicacao)): ?>
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Autor</th>
+                            <th>Tipo</th>
+                            <th>Publicado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($view_listPublicacao as $objPublicacao) : ?>
+                            <tr>
+                                <td><?php echo $objPublicacao->getTitulo(); ?></td>
+                                <td><?php echo $objPublicacao->getAutor(); ?></td>
+                                <td><?php echo $objPublicacao->getTipo()->getNome(); ?></td>
+                                <td><?php echo $objPublicacao->getDataPublicacao(); ?></td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            <?php else: ?>
+                <h3>Nenhum Publicacao encontrado.</h3>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>

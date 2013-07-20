@@ -1,4 +1,1 @@
-$(document).ready(function(){
-    $('.slider').tilesSlider({ random: true });
-})
-    
+$('.slider').tilesSlider('start');
