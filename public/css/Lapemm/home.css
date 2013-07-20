@@ -1,0 +1,165 @@
+.home .espaco-destaque{
+    margin-bottom: 18.4px;
+}
+
+/*DESTAQUE*/
+.home #destaque{
+    height:400px;
+    /*margin-bottom: 30px;*/
+}
+
+/*DESTAQUES PAGINA PRINCIPAL*/
+.home #destaque-principal{
+    background: url("/lapemm/public/templates/TLapemm/images/bg-box.png") 0px 80px /*bottom center*/ repeat-x;
+    height: 150px;
+    /*background: #fdfffe;*/
+    border: 1px solid #D1EADD;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 1px 0 #d0d0d0;
+
+}
+
+.home #bannerDestaque{
+    border: 1px solid #D1EADD;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 1px 0 #d0d0d0;
+}
+/*COLUNA 01*/
+
+.home h3 {
+    color: #3AB879;
+    font-family: "Myriad Pro";
+    font-size: 20px;
+    font-weight: normal;
+    /*float:left;*/
+    margin-top:6px;
+    padding: 6px 14px;
+
+
+
+
+}
+
+.home .mini-box {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #666666;
+    display: block;
+    float:left;
+    font-family: arial;
+    font-size: 13px;
+    margin-right: 14px;
+    padding: 10px 15px;
+
+
+}
+
+.home #coluna_1{
+    width: 310px;
+    height: 320px;
+    background: url("/lapemm/public/templates/TLapemm/images/bg-box.png") repeat-x scroll 0 250px transparent;
+    float: left;
+    border:1px solid #D1EADD;
+    border-radius: 10px;
+    box-shadow: 0 1px 0 #d0d0d0;
+    -moz-border-radius: 10px;	
+}
+
+.home #coluna_1 img{ width:99px; height:65px; padding:4px; margin-bottom:10px; }
+
+.saiba-mais{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    clear: both;
+    color: #34885F;
+    float: left;
+    font-size: 13px;
+    margin-left: 17px;
+    text-decoration: none;
+}
+
+.home #folha{
+    background: url("/lapemm/public/templates/TLapemm/images/folha.png") no-repeat;
+    float: right;
+    height: 128px;
+    margin-right: 11px;
+    margin-top: -100px;
+    width: 119px;
+}
+
+.home #download{
+    background: url("/lapemm/public/templates/TLapemm/images/download.png") no-repeat;
+    float: right;
+    height: 118px;
+    margin-right: 11px;
+    margin-top: -95px;
+    width: 111px;
+}
+
+.home #coordenador{
+    background: url("/lapemm/public/templates/TLapemm/images/coordenador.png") no-repeat;
+    float: right;
+    height: 144px;
+    margin-right: 6px;
+    margin-top: -130px;
+    width: 147px;
+    overflow:hidden;
+}
+
+
+
+.home .fundo-box{
+    background: url("/lapemm/public/templates/TLapemm/images/bg-box.png") no-repeat;
+    width:280px;
+    height:68px;
+    margin-top:300px;
+
+}
+
+
+
+/*COLUNA 02*/
+.home #coluna_2{
+    width: 310px;
+    height: 320px;
+    margin: 0 auto;
+    float: left;
+    margin-left: 15px;
+}
+
+/*COLUNA 03*/
+.home #coluna_3{
+    width: 310px;
+    height: 320px;
+    float: right;
+}
+
+.home .separador{ 
+    display:block; 
+    height:80px; 
+    width:287px; 
+    padding-top:2px;
+    margin-bottom:7px;
+    margin-left:9px;
+    border-bottom:1px dotted #D1EADD;
+}
+
+/*.separador img {float:left;}*/
+
+.home .conteudo-noticia{ 
+    float:right; 
+    width:167px;
+    color: #666666;
+    font-family: arial;
+    font-size: 13px;
+}
+
+.home span.titulo-noticia{ color:#3AB879; display:block; }
+
+.home .s-titulo{
+    display:block; 
+    height:40px; 
+    width:287px; 
+    padding-top:2px;
+    margin-bottom:11px;
+    margin-left:9px;
+    border-bottom:1px dotted #D1EADD;
+}

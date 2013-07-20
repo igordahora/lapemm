@@ -1,0 +1,79 @@
+/*INICIO CONTEUDO DOWNLOAD*/
+
+h4 {
+	font-size:20px;
+	color: #666666;
+	font-weight:bold;
+}
+
+.participantes{
+	float:left;
+	font-size:14px;
+	font-style:italic;
+	width:735px;
+	padding:5px;
+	background:#fffff4;
+	
+}
+
+.ex-integrantes{
+	display: block;
+    float: left;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 6px;
+	width:735px;
+	padding:5px;
+	background:#fffff4;
+}
+
+#dowloads-tab{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted #CCCCCC;
+	padding-bottom:10px;
+}
+
+
+
+#dowloads-tab #dowloads-col1{
+	width: 50px;
+	height: 60px;
+	padding: 5px;
+	padding-top:0pc;
+	text-align: center;
+	color: #33BA77;
+	font-weight: bolder;
+	float:left;
+}
+
+#dowloads-tab #dowloads-col1 #data{
+	color: #3AB879;
+    font-size: 27px;
+    
+}
+
+#dowloads-tab #dowloads-col1 #mes{
+	color: #3AB879;
+    font-size: 19px;
+    padding-bottom: 3px;
+}
+
+
+#dowloads-tab #dowloads-col2{
+	width: 748px;
+	/*height: 52px;*/
+	padding: 5px;
+	padding-left:15px;
+	float:left;
+	/*border-left: 1px solid #CCCCCC;	*/	
+}
+
+#dowloads-tab #dowloads-col3{
+	cursor: pointer;
+	width: 90px;
+	height: 37px;		
+	float:right;
+}		
+
+/*FIM CONTEUDO DOWNLOAD*/

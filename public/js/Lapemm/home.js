@@ -1,0 +1,1 @@
+$('.slider').tilesSlider('start');
