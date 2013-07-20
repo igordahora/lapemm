@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `funcionalidade` (
   `des_status` char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`ide_funcionalidade`),
   UNIQUE KEY `nom_funcionalidade_UNIQUE` (`nom_funcionalidade`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Extraindo dados da tabela `funcionalidade`
@@ -57,7 +57,10 @@ INSERT INTO `funcionalidade` (`ide_funcionalidade`, `nom_funcionalidade`, `des_f
 (15, 'LinhaDePesquisa_editar', 'Edição da Linha de Pesquisa', 'A'),
 (16, 'Projeto_listar', 'Lista de Projetos', 'A'),
 (17, 'Projeto_cadastrar', 'Cadastro de Projetos', 'A'),
-(18, 'Projeto_editar', 'Edição de projetos', 'A');
+(18, 'Projeto_editar', 'Edição de projetos', 'A'),
+(19, 'Publicacao_cadastrar', 'Cadastro de Publicação', 'A'),
+(20, 'Publicacao_editar', 'Edição de Publicação', 'A'),
+(21, 'Publicacao_listar', 'Listar Publicação', 'A');
 
 -- --------------------------------------------------------
 
@@ -181,7 +184,10 @@ INSERT INTO `perfil__funcionalidade` (`ide_perfil`, `ide_funcionalidade`) VALUES
 (1, 15),
 (1, 16),
 (1, 17),
-(1, 18);
+(1, 18),
+(1, 19),
+(1, 20),
+(1, 21);
 
 -- --------------------------------------------------------
 
@@ -223,14 +229,45 @@ CREATE TABLE IF NOT EXISTS `projeto` (
   `des_status` char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`ide_projeto`,`ide_linhadepesquisa`),
   KEY `fk_projeto_linhadepesquisa1_idx` (`ide_linhadepesquisa`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
 
 --
--- Extraindo dados da tabela `projeto`
+-- Estrutura da tabela `publicacao`
 --
 
-INSERT INTO `projeto` (`ide_projeto`, `ide_linhadepesquisa`, `nom_projeto`, `des_projeto`, `pub_projeto`, `ide_usuario_criador`, `dat_criacao`, `ide_usuario_atualizador`, `dat_atualizacao`, `des_status`) VALUES
-(1, 1, 'Projeto 01', 'Determinar o projeto 01', '<u><b>Objetivo</b></u><br><br><div align="justify">Teste de inserção do projeto:<br><blockquote>Tabulacao 01<br>Tabulacao 02<br>Tabulacao 03<br></blockquote></div><br><br>', 1, 1373340609, NULL, NULL, 'A');
+CREATE TABLE IF NOT EXISTS `publicacao` (
+  `ide_publicacao` int(11) NOT NULL AUTO_INCREMENT,
+  `ide_tipo_publicacao` int(11) NOT NULL,
+  `des_publicacao` text,
+  `nom_titulo` varchar(120) NOT NULL,
+  `dat_publicacao` varchar(8) NOT NULL,
+  `nom_autor` varchar(120) NOT NULL,
+  `path_imagem` varchar(120) DEFAULT NULL,
+  `path_arquivo` varchar(120) DEFAULT NULL,
+  `ide_usuario_criador` int(11) NOT NULL,
+  `dat_criacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ide_usuario_atualizacao` int(11) DEFAULT NULL,
+  `dat_atualizacao` int(11) DEFAULT NULL,
+  `des_status` char(1) NOT NULL DEFAULT 'A',
+  PRIMARY KEY (`ide_publicacao`),
+  KEY `fk_publicacao_tipo_publicacao1_idx` (`ide_tipo_publicacao`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipo_publicacao`
+--
+
+CREATE TABLE IF NOT EXISTS `tipo_publicacao` (
+  `ide_tipo_publicacao` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_tipo_publicacao` varchar(120) NOT NULL,
+  `path_imagem` varchar(120) NOT NULL,
+  PRIMARY KEY (`ide_tipo_publicacao`),
+  UNIQUE KEY `nom_tipo_publicacao_UNIQUE` (`nom_tipo_publicacao`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -299,7 +336,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`ide_usuario`, `nom_usuario`, `email`, `des_senha`, `avatar`, `ide_perfil`, `num_acessos`, `try_logon`, `dat_try_logon`, `dat_ultimo_acesso`, `ide_usuario_criador`, `dat_criacao`, `ide_usuario_atualizador`, `dat_atualizacao`, `des_status`) VALUES
-(1, 'IGOR DA HORA SANTOS', 'igordahora@gmail.com', 'dcb15ce9052a80a2d6537fcd2f8f0768', NULL, 1, 16, 0, 0, 1373336628, 1, 0, NULL, NULL, 'A'),
+(1, 'IGOR DA HORA SANTOS', 'igordahora@gmail.com', 'dcb15ce9052a80a2d6537fcd2f8f0768', NULL, 1, 21, 0, 0, 1374357250, 1, 0, NULL, NULL, 'A'),
 (2, 'EDISON', 'edison@capacidadeevolutiva.com.br', 'd71bb00a7e194c13110cad3aece8ed7f', NULL, 1, 0, 0, 0, NULL, 1, 1372902569, 1, 1372903314, 'A');
 
 --
@@ -331,6 +368,12 @@ ALTER TABLE `perfil__responsabilidade`
 --
 ALTER TABLE `projeto`
   ADD CONSTRAINT `fk_projeto_linhadepesquisa1` FOREIGN KEY (`ide_linhadepesquisa`) REFERENCES `linhadepesquisa` (`ide_linhadepesquisa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para a tabela `publicacao`
+--
+ALTER TABLE `publicacao`
+  ADD CONSTRAINT `fk_publicacao_tipo_publicacao1` FOREIGN KEY (`ide_tipo_publicacao`) REFERENCES `tipo_publicacao` (`ide_tipo_publicacao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para a tabela `usuario`
