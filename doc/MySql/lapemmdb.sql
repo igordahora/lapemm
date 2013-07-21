@@ -244,6 +244,8 @@ CREATE TABLE IF NOT EXISTS `publicacao` (
   `nom_titulo` varchar(120) NOT NULL,
   `dat_publicacao` varchar(8) NOT NULL,
   `nom_autor` varchar(120) NOT NULL,
+  `pub_referencia` varchar(120) DEFAULT NULL,
+  `link_referencia` varchar(300) DEFAULT NULL,
   `path_imagem` varchar(120) DEFAULT NULL,
   `path_arquivo` varchar(120) DEFAULT NULL,
   `ide_usuario_criador` int(11) NOT NULL,
