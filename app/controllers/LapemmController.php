@@ -4,7 +4,7 @@ class LapemmController extends TLapemm {
     # Pagina principal
 
     public function index() {
-        $this->REDIRECT->goToAction("quemsomos");
+        $this->REDIRECT->goToAction("home");
     }
 
     /**
