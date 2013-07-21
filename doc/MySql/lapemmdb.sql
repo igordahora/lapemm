@@ -333,15 +333,14 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`ide_usuario`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `fk_usuario_perfil1_idx` (`ide_perfil`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`ide_usuario`, `nom_usuario`, `email`, `des_senha`, `avatar`, `ide_perfil`, `num_acessos`, `try_logon`, `dat_try_logon`, `dat_ultimo_acesso`, `ide_usuario_criador`, `dat_criacao`, `ide_usuario_atualizador`, `dat_atualizacao`, `des_status`) VALUES
-(1, 'IGOR DA HORA SANTOS', 'igordahora@gmail.com', 'dcb15ce9052a80a2d6537fcd2f8f0768', NULL, 1, 21, 0, 0, 1374357250, 1, 0, NULL, NULL, 'A'),
-(2, 'EDISON', 'edison@capacidadeevolutiva.com.br', 'd71bb00a7e194c13110cad3aece8ed7f', NULL, 1, 0, 0, 0, NULL, 1, 1372902569, 1, 1372903314, 'A');
+(1, 'ADMINISTRADOR', 'administrador@gmail.com', '25d55ad283aa400af464c76d713c07ad', NULL, 1, 0, 0, 0, 1374357250, 1, 0, NULL, NULL, 'A');
 
 --
 -- Restrições para as tabelas dumpadas
